@@ -109,7 +109,7 @@ export default class App extends React.Component {
             alignItems: 'center',
             padding: 50,
           }}>
-          <Text>
+          <Text style={{fontFamily: 'Ubuntu-Bold', fontSize: 18}}>
             This will be your screen when you click Skip from any slide or Done
             button at last
           </Text>
@@ -136,6 +136,7 @@ const styles = StyleSheet.create({
     color: 'white',
     textAlign: 'center',
     paddingVertical: 30,
+    fontFamily: 'Ubuntu-Medium'
   },
   title: {
     fontSize: 32,
