@@ -17,7 +17,7 @@ import {
 
 import AppIntroSlider from 'react-native-app-intro-slider';
 
-import Icon from 'react-native-ionicons';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const slides = [
   {
@@ -132,16 +132,17 @@ export default class App extends React.Component {
 
 const styles = StyleSheet.create({
   text: {
-    fontSize: 18,
+    fontSize: 24,
     color: 'white',
     textAlign: 'center',
     paddingVertical: 30,
   },
   title: {
-    fontSize: 25,
+    fontSize: 32,
     color: 'white',
     textAlign: 'center',
     marginBottom: 16,
+    fontFamily: 'Ubuntu-Bold'
   },
   buttonCircle: {
     width: 40,
