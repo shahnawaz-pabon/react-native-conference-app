@@ -19,6 +19,8 @@ import AppIntroSlider from 'react-native-app-intro-slider';
 
 import Icon from 'react-native-vector-icons/Ionicons';
 
+import ScheduleScreen from './screens/schedule';
+
 const slides = [
   {
     key: 'somethun',
@@ -102,18 +104,7 @@ export default class App extends React.Component {
     if (this.state.showRealApp) {
       //Real Application
       return (
-        <View
-          style={{
-            flex: 1,
-            justifyContent: 'center',
-            alignItems: 'center',
-            padding: 50,
-          }}>
-          <Text style={{fontFamily: 'Ubuntu-Bold', fontSize: 18}}>
-            This will be your screen when you click Skip from any slide or Done
-            button at last
-          </Text>
-        </View>
+        <ScheduleScreen />
       );
     } else {
       //Intro slides
@@ -132,7 +123,7 @@ export default class App extends React.Component {
 
 const styles = StyleSheet.create({
   text: {
-    fontSize: 24,
+    fontSize: 16,
     color: 'white',
     textAlign: 'center',
     paddingVertical: 30,
@@ -152,5 +143,5 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     justifyContent: 'center',
     alignItems: 'center',
-  },
+  }
 });
