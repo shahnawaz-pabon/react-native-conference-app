@@ -21,19 +21,21 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 import ScheduleScreen from './screens/schedule';
 
+import SvgUri from 'react-native-svg-uri';
+
 const slides = [
   {
     key: 'somethun',
     title: 'Title 1',
     text: 'Description.\nSay something cool',
-    image: require('../assets/images/slide.png'),
+    image: require('../assets/images/react.svg'),
     backgroundColor: '#59b2ab',
   },
   {
     key: 'somethun-dos',
     title: 'Title 2',
     text: 'Other cool stuff',
-    image: require('../assets/images/slide.png'),
+    image: require('../assets/images/professor.svg'),
     backgroundColor: '#febe29',
   },
   {
@@ -94,7 +96,9 @@ export default class App extends React.Component {
           paddingBottom: 100
         }}>
         <Text style={styles.title}>{item.title}</Text>
-        <Image style={styles.image} source={item.image} />
+
+        <SvgUri height="250" width="250" source={item.image} />
+        {/* <Image style={styles.image} source={item.image} /> */}
         <Text style={styles.text}>{item.text}</Text>
       </View>
     );
@@ -143,5 +147,9 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  image: {
+    width: 200,
+    height: 200
   }
 });
