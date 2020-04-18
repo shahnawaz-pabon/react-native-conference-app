@@ -11,8 +11,8 @@ import {
   StyleSheet,
   View,
   Text,
-  Button,
-  Image
+  Image,
+  StatusBar
 } from 'react-native';
 
 import AppIntroSlider from 'react-native-app-intro-slider';
@@ -23,7 +23,7 @@ import ScheduleScreen from './screens/schedule';
 
 const slides = [
   {
-    key: 'somethun',
+    key: 'welcome-to-rnca',
     title: 'Welcome to RNCA',
     text: 'Description.\nSay something cool',
     image: require('../assets/images/1.png'),
@@ -31,7 +31,7 @@ const slides = [
   },
   {
     key: 'somethun-dos',
-    title: 'Title 2',
+    title: '',
     text: 'Other cool stuff',
     image: require('../assets/images/2.png'),
     backgroundColor: '#2c3e50',
@@ -111,22 +111,30 @@ export default class App extends React.Component {
     if (this.state.showRealApp) {
       //Real Application
       return (
-        <ScheduleScreen />
+        <>
+          <StatusBar barStyle="dark-content" />
+          <ScheduleScreen />
+        </>
+
       );
     } else {
       //Intro slides
       return (
-        <AppIntroSlider
-          slides={slides}
-          renderItem={this._renderItem}
-          onDone={this._onDone}
-          showSkipButton={true}
-          renderDoneButton={this._renderDoneButton}
-          renderNextButton={this._renderNextButton}
-          buttonTextStyle={{ fontFamily: 'Ubuntu-Bold' }}
-          dotStyle={{ backgroundColor: '#fff'}}
-          activeDotStyle={{backgroundColor: '#00BFA6'}}
-        />
+        <>
+          <StatusBar barStyle="dark-content" />
+          <AppIntroSlider
+            slides={slides}
+            renderItem={this._renderItem}
+            onDone={this._onDone}
+            showSkipButton={true}
+            renderDoneButton={this._renderDoneButton}
+            renderNextButton={this._renderNextButton}
+            buttonTextStyle={{ fontFamily: 'Ubuntu-Bold' }}
+            dotStyle={{ backgroundColor: '#fff' }}
+            activeDotStyle={{ backgroundColor: '#00BFA6' }}
+          />
+        </>
+
       );
     }
   }
