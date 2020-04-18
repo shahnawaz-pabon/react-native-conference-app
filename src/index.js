@@ -24,7 +24,7 @@ import ScheduleScreen from './screens/schedule';
 const slides = [
   {
     key: 'somethun',
-    title: 'Title 1',
+    title: 'Welcome to RNCA',
     text: 'Description.\nSay something cool',
     image: require('../assets/images/1.png'),
     backgroundColor: '#2c3e50',
@@ -45,7 +45,7 @@ const slides = [
   },
   {
     key: 'somethun1',
-    title: 'Rocket guy',
+    title: 'Let\'s start',
     text: 'I\'m already out of descriptions\n\nLorem ipsum bla bla bla',
     image: require('../assets/images/4.png'),
     backgroundColor: '#2c3e50',
@@ -120,8 +120,12 @@ export default class App extends React.Component {
           slides={slides}
           renderItem={this._renderItem}
           onDone={this._onDone}
+          showSkipButton={true}
           renderDoneButton={this._renderDoneButton}
           renderNextButton={this._renderNextButton}
+          buttonTextStyle={{ fontFamily: 'Ubuntu-Bold' }}
+          dotStyle={{ backgroundColor: '#fff'}}
+          activeDotStyle={{backgroundColor: '#00BFA6'}}
         />
       );
     }
@@ -137,7 +141,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Ubuntu-Medium'
   },
   title: {
-    fontSize: 32,
+    fontSize: 28,
     color: 'white',
     textAlign: 'center',
     marginBottom: 16,
@@ -153,6 +157,6 @@ const styles = StyleSheet.create({
   },
   image: {
     width: 250,
-    height: 200,
+    height: 150,
   }
 });
