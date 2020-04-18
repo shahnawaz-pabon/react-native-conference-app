@@ -21,29 +21,34 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 import ScheduleScreen from './screens/schedule';
 
-import SvgUri from 'react-native-svg-uri';
-
 const slides = [
   {
     key: 'somethun',
     title: 'Title 1',
     text: 'Description.\nSay something cool',
-    image: require('../assets/images/react.svg'),
-    backgroundColor: '#59b2ab',
+    image: require('../assets/images/1.png'),
+    backgroundColor: '#2c3e50',
   },
   {
     key: 'somethun-dos',
     title: 'Title 2',
     text: 'Other cool stuff',
-    image: require('../assets/images/professor.svg'),
-    backgroundColor: '#febe29',
+    image: require('../assets/images/2.png'),
+    backgroundColor: '#2c3e50',
   },
   {
     key: 'somethun1',
     title: 'Rocket guy',
     text: 'I\'m already out of descriptions\n\nLorem ipsum bla bla bla',
-    image: require('../assets/images/slide.png'),
-    backgroundColor: '#22bcb5',
+    image: require('../assets/images/3.png'),
+    backgroundColor: '#2c3e50',
+  },
+  {
+    key: 'somethun1',
+    title: 'Rocket guy',
+    text: 'I\'m already out of descriptions\n\nLorem ipsum bla bla bla',
+    image: require('../assets/images/4.png'),
+    backgroundColor: '#2c3e50',
   }
 ];
 
@@ -96,9 +101,7 @@ export default class App extends React.Component {
           paddingBottom: 100
         }}>
         <Text style={styles.title}>{item.title}</Text>
-
-        <SvgUri height="250" width="250" source={item.image} />
-        {/* <Image style={styles.image} source={item.image} /> */}
+        <Image style={styles.image} resizeMode="contain" source={item.image} />
         <Text style={styles.text}>{item.text}</Text>
       </View>
     );
@@ -143,13 +146,13 @@ const styles = StyleSheet.create({
   buttonCircle: {
     width: 40,
     height: 40,
-    backgroundColor: 'rgba(0, 0, 0, .2)',
+    backgroundColor: '#00BFA6',
     borderRadius: 20,
     justifyContent: 'center',
     alignItems: 'center',
   },
   image: {
-    width: 200,
-    height: 200
+    width: 250,
+    height: 200,
   }
 });
