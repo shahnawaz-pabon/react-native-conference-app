@@ -83,6 +83,8 @@ project.ext.vectoricons = [
 project.ext.react = [
     entryFile: "index.js",
     enableHermes: false,  // clean and rebuild if changing
+    bundleInDebug: true,
+    devDisabledInDebug: true
 ]
 
 apply from: "../../node_modules/react-native/react.gradle"
