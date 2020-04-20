@@ -5,7 +5,7 @@ import {
     Text,
   } from 'react-native';
 
-export default class ScheduleScreen extends React.Component {
+export default class MapScreen extends React.Component {
 
     constructor(props) {
         super(props);
@@ -21,7 +21,7 @@ export default class ScheduleScreen extends React.Component {
                     padding: 50,
                 }}>
                 <Text style={{ fontFamily: 'Ubuntu-Bold', fontSize: 18 }}>
-                    This is ScheduleScreen
+                    This MapScreen
               </Text>
             </View>
         );
