@@ -44,7 +44,7 @@ const slides = [
     backgroundColor: '#2c3e50',
   },
   {
-    key: 'somethun1',
+    key: 'somethun2',
     title: 'Let\'s start',
     text: 'I\'m already out of descriptions\n\nLorem ipsum bla bla bla',
     image: require('../assets/images/4.png'),
