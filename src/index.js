@@ -19,7 +19,7 @@ import AppIntroSlider from 'react-native-app-intro-slider';
 
 import Icon from 'react-native-vector-icons/Ionicons';
 
-import ScheduleScreen from './screens/schedule';
+import TabScreen from './screens/tabs';
 
 const slides = [
   {
@@ -113,7 +113,7 @@ export default class App extends React.Component {
       return (
         <>
           <StatusBar barStyle="dark-content" />
-          <ScheduleScreen />
+          <TabScreen />
         </>
 
       );
