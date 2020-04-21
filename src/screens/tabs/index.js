@@ -1,5 +1,10 @@
 import React from 'react';
 
+import {
+    View,
+    Text,
+} from 'react-native';
+
 import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 
@@ -13,6 +18,7 @@ const Tab = createMaterialBottomTabNavigator();
 export default class TabScreen extends React.Component {
 
     render() {
+
         return (
 
             <NavigationContainer>
@@ -20,17 +26,18 @@ export default class TabScreen extends React.Component {
                 <Tab.Navigator
                     initialRouteName="Schedule"
                     activeColor="#f0edf6"
-                    inactiveColor="#3e2465"
-                    barStyle={{ backgroundColor: '#694fad' }}
+                    inactiveColor="#7f8c8d"
+                    barStyle={{ backgroundColor: '#2c3e50' }}
                 >
                     <Tab.Screen
                         name="Schedule"
                         component={ScheduleScreen}
                         options={{
-                            tabBarLabel: 'Schedule',
+                            tabBarLabel: <Text style={{ fontFamily: 'Ubuntu-Bold' }}>Schedule</Text>,
                             tabBarIcon: ({ color }) => (
-                                <Icon name="ios-calendar" color={color} size={26} />
+                                <Icon name="ios-calendar" color={color} size={24} />
                             ),
+
                         }}
                     />
 
@@ -38,9 +45,9 @@ export default class TabScreen extends React.Component {
                         name="Map"
                         component={MapScreen}
                         options={{
-                            tabBarLabel: 'Map',
+                            tabBarLabel: <Text style={{ fontFamily: 'Ubuntu-Bold' }}>Map</Text>,
                             tabBarIcon: ({ color }) => (
-                                <Icon name="ios-pin" color={color} size={26} />
+                                <Icon name="ios-pin" color={color} size={24} />
                             ),
                         }}
                     />
