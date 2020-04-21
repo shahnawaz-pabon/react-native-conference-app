@@ -4,6 +4,7 @@ import {
 
 export const styles = StyleSheet.create({
     text: {
-        fontFamily: 'Ubuntu-Bold' 
+        fontFamily: 'Ubuntu-Bold',
+        fontSize: 14
     }
 })

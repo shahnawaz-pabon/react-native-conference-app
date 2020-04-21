@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {
-    View,
+    StatusBar,
     Text,
 } from 'react-native';
 
@@ -22,41 +22,45 @@ export default class TabScreen extends React.Component {
     render() {
 
         return (
+            <>
 
-            <NavigationContainer>
+                <StatusBar backgroundColor="#2c3e50"></StatusBar>
 
-                <Tab.Navigator
-                    initialRouteName="Schedule"
-                    activeColor="#f0edf6"
-                    inactiveColor="#7f8c8d"
-                    barStyle={{ backgroundColor: '#2c3e50' }}
-                >
-                    <Tab.Screen
-                        name="Schedule"
-                        component={ScheduleScreen}
-                        options={{
-                            tabBarLabel: <Text style={styles.text}>Schedule</Text>,
-                            tabBarIcon: ({ color }) => (
-                                <Icon name="ios-calendar" color={color} size={24} />
-                            ),
+                <NavigationContainer>
 
-                        }}
-                    />
+                    <Tab.Navigator
+                        initialRouteName="Schedule"
+                        activeColor="#f0edf6"
+                        inactiveColor="#7f8c8d"
+                        barStyle={{ backgroundColor: '#2c3e50' }}
+                    >
+                        <Tab.Screen
+                            name="Schedule"
+                            component={ScheduleScreen}
+                            options={{
+                                tabBarLabel: <Text style={styles.text}>Schedule</Text>,
+                                tabBarIcon: ({ color }) => (
+                                    <Icon name="ios-calendar" color={color} size={24} />
+                                ),
 
-                    <Tab.Screen
-                        name="Map"
-                        component={MapScreen}
-                        options={{
-                            tabBarLabel: <Text style={{ fontFamily: 'Ubuntu-Bold' }}>Map</Text>,
-                            tabBarIcon: ({ color }) => (
-                                <Icon name="ios-pin" color={color} size={24} />
-                            ),
-                        }}
-                    />
+                            }}
+                        />
 
-                </Tab.Navigator>
+                        <Tab.Screen
+                            name="Map"
+                            component={MapScreen}
+                            options={{
+                                tabBarLabel: <Text style={styles.text}>Map</Text>,
+                                tabBarIcon: ({ color }) => (
+                                    <Icon name="ios-pin" color={color} size={24} />
+                                ),
+                            }}
+                        />
 
-            </NavigationContainer>
+                    </Tab.Navigator>
+
+                </NavigationContainer>
+            </>
 
         )
     }
