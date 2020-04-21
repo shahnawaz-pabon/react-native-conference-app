@@ -5,6 +5,8 @@ import {
     Text,
 } from 'react-native';
 
+import { styles } from './style';
+
 import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 
@@ -33,7 +35,7 @@ export default class TabScreen extends React.Component {
                         name="Schedule"
                         component={ScheduleScreen}
                         options={{
-                            tabBarLabel: <Text style={{ fontFamily: 'Ubuntu-Bold' }}>Schedule</Text>,
+                            tabBarLabel: <Text style={styles.text}>Schedule</Text>,
                             tabBarIcon: ({ color }) => (
                                 <Icon name="ios-calendar" color={color} size={24} />
                             ),
