@@ -12,8 +12,10 @@ import { createMaterialBottomTabNavigator } from '@react-navigation/material-bot
 
 import Icon from 'react-native-vector-icons/Ionicons';
 
-import MapScreen from '../map';
 import ScheduleScreen from '../schedule';
+import SpeakerScreen from '../speakers';
+import MapScreen from '../map';
+import AboutScreen from '../about';
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -47,12 +49,35 @@ export default class TabScreen extends React.Component {
                         />
 
                         <Tab.Screen
+                            name="Speakers"
+                            component={SpeakerScreen}
+                            options={{
+                                tabBarLabel: <Text style={styles.text}>Speakers</Text>,
+                                tabBarIcon: ({ color }) => (
+                                    <Icon name="ios-people" color={color} size={24} />
+                                ),
+
+                            }}
+                        />
+
+                        <Tab.Screen
                             name="Map"
                             component={MapScreen}
                             options={{
                                 tabBarLabel: <Text style={styles.text}>Map</Text>,
                                 tabBarIcon: ({ color }) => (
                                     <Icon name="ios-pin" color={color} size={24} />
+                                ),
+                            }}
+                        />
+
+                        <Tab.Screen
+                            name="About"
+                            component={AboutScreen}
+                            options={{
+                                tabBarLabel: <Text style={styles.text}>About</Text>,
+                                tabBarIcon: ({ color }) => (
+                                    <Icon name="ios-information-circle" color={color} size={24} />
                                 ),
                             }}
                         />
