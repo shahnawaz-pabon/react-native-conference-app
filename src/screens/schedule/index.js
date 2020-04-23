@@ -9,8 +9,14 @@ import { NavigationContainer } from '@react-navigation/native';
 
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
+import Icon from 'react-native-vector-icons/Ionicons';
+
+// import ScheduleScreen from '../schedule';
+import SpeakerScreen from '../speakers';
 import MapScreen from '../map';
 import AboutScreen from '../about';
+
+
 
 const Drawer = createDrawerNavigator();
 
@@ -26,9 +32,48 @@ export default class ScheduleScreen extends React.Component {
         return (
 
 
-            <Drawer.Navigator>
-                <Drawer.Screen name="Map" component={MapScreen} />
-                <Drawer.Screen name="About" component={AboutScreen} />
+            <Drawer.Navigator
+                drawerStyle={{
+                    backgroundColor: '#fff',
+                }}
+                
+            >
+                <Drawer.Screen
+                    name="Speakers"
+                    component={SpeakerScreen}
+                    options={{
+                        drawerLabel: () => (
+                            <Text style={styles.text}>Speakers</Text>
+                        ),
+                        drawerIcon: () => (
+                            <Icon name="ios-people" size={24} />
+                        )
+                    }}
+                />
+                <Drawer.Screen
+                    name="Map"
+                    component={MapScreen}
+                    options={{
+                        drawerLabel: () => (
+                            <Text style={styles.text}>Map</Text>
+                        ),
+                        drawerIcon: () => (
+                            <Icon name="ios-pin" size={24} />
+                        )
+                    }}
+                />
+                <Drawer.Screen
+                    name="About"
+                    component={AboutScreen}
+                    options={{
+                        drawerLabel: () => (
+                            <Text style={styles.text}>About</Text>
+                        ),
+                        drawerIcon: () => (
+                            <Icon name="ios-information-circle" size={24} />
+                        )
+                    }}
+                />
             </Drawer.Navigator>
 
 
