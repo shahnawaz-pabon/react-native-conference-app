@@ -35,6 +35,7 @@ export default class TabScreen extends React.Component {
                         activeColor="#f0edf6"
                         inactiveColor="#7f8c8d"
                         barStyle={{ backgroundColor: '#2c3e50' }}
+                        backBehavior='initialRoute'
                     >
                         <Tab.Screen
                             name="Schedule"
