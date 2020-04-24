@@ -12,7 +12,7 @@ import { createMaterialBottomTabNavigator } from '@react-navigation/material-bot
 
 import Icon from 'react-native-vector-icons/Ionicons';
 
-import ScheduleScreen from '../schedule';
+import StackScheduleScreen from '../schedule';
 import SpeakerScreen from '../speakers';
 import MapScreen from '../map';
 import AboutScreen from '../about';
@@ -39,32 +39,35 @@ export default class TabScreen extends React.Component {
                     >
                         <Tab.Screen
                             name="Schedule"
-                            component={ScheduleScreen}
+                            component={StackScheduleScreen}
                             options={{
+                                title: <Text>Title</Text>,
                                 tabBarLabel: <Text style={styles.text}>Schedule</Text>,
                                 tabBarIcon: ({ color }) => (
                                     <Icon name="ios-calendar" color={color} size={24} />
                                 ),
-
                             }}
+
                         />
 
                         <Tab.Screen
                             name="Speakers"
                             component={SpeakerScreen}
                             options={{
+                                title: <Text>Title</Text>,
                                 tabBarLabel: <Text style={styles.text}>Speakers</Text>,
                                 tabBarIcon: ({ color }) => (
                                     <Icon name="ios-people" color={color} size={24} />
                                 ),
-
                             }}
+
                         />
 
                         <Tab.Screen
                             name="Map"
                             component={MapScreen}
                             options={{
+                                title: <Text>Title</Text>,
                                 tabBarLabel: <Text style={styles.text}>Map</Text>,
                                 tabBarIcon: ({ color }) => (
                                     <Icon name="ios-pin" color={color} size={24} />
@@ -76,6 +79,7 @@ export default class TabScreen extends React.Component {
                             name="About"
                             component={AboutScreen}
                             options={{
+                                title: <Text>Title</Text>,
                                 tabBarLabel: <Text style={styles.text}>About</Text>,
                                 tabBarIcon: ({ color }) => (
                                     <Icon name="ios-information-circle" color={color} size={24} />
