@@ -25,28 +25,35 @@ const slides = [
   {
     key: 'welcome-to-rnca',
     title: 'Welcome to RNCA',
-    text: 'Description.\nSay something cool',
+    text: <Text >The
+      <Text style={{ color: '#00BFA6', fontWeight: 'bold' }}> React Native Conference App </Text>
+      describes the preview of react native framework with the proper
+      use of awesome components.</Text>,
     image: require('../assets/images/1.png'),
     backgroundColor: '#2c3e50',
   },
   {
-    key: 'somethun-dos',
-    title: '',
-    text: 'Other cool stuff',
+    key: 'what-is-react-native',
+    title: 'What is React Native?',
+    text: <Text>
+      It's a <Text style={{ color: '#00BFA6', fontWeight: 'bold' }}>Javascript Framework </Text>
+      like React that is used to build mobile applications using native components rather than 
+      web components.
+    </Text>,
     image: require('../assets/images/2.png'),
     backgroundColor: '#2c3e50',
   },
   {
-    key: 'somethun1',
-    title: 'Rocket guy',
-    text: 'I\'m already out of descriptions\n\nLorem ipsum bla bla bla',
+    key: 'hello-world',
+    title: 'Hello World!',
+    text: 'It\'s really a fantastic framework. So take your computer, play music and start coding with react native.',
     image: require('../assets/images/3.png'),
     backgroundColor: '#2c3e50',
   },
   {
-    key: 'somethun2',
+    key: 'let\'s-start',
     title: 'Let\'s start',
-    text: 'I\'m already out of descriptions\n\nLorem ipsum bla bla bla',
+    text: 'Let\'s get started.',
     image: require('../assets/images/4.png'),
     backgroundColor: '#2c3e50',
   }
@@ -145,14 +152,14 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: 'white',
     textAlign: 'center',
-    paddingVertical: 30,
-    fontFamily: 'Ubuntu-Medium'
+    fontFamily: 'Ubuntu-Medium',
+    maxWidth: 300
   },
   title: {
-    fontSize: 28,
+    fontSize: 24,
     color: 'white',
     textAlign: 'center',
-    marginBottom: 16,
+    marginTop: 30,
     fontFamily: 'Ubuntu-Bold'
   },
   buttonCircle: {
