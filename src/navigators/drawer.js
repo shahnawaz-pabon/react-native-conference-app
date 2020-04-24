@@ -21,9 +21,8 @@ import AboutScreen from '../screens/about';
 
 const Drawer = createDrawerNavigator();
 
-import { styles } from './style';
 
-export default class Drawer extends React.Component {
+export default class DrawerScreen extends React.Component {
 
     constructor(props) {
         super(props);

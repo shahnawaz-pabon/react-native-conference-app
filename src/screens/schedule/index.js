@@ -3,14 +3,14 @@ import React from 'react';
 import {
     View,
     Text,
-    Button
+    Button,
 } from 'react-native';
 
 // import { NavigationContainer } from '@react-navigation/native';
 
 // import { createDrawerNavigator } from '@react-navigation/drawer';
 
-import Icon from 'react-native-vector-icons/Ionicons';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 // import ScheduleScreen from '../schedule';
 import SpeakerScreen from '../speakers';
@@ -21,9 +21,12 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 const Stack = createStackNavigator();
 
+import DrawerScreen from '../../navigators/drawer';
+
 // const Drawer = createDrawerNavigator();
 
 import { styles } from './style';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 class ScheduleScreen extends React.Component {
 
@@ -107,16 +110,30 @@ export default function StackScheduleScreen({ navigation }) {
                 name="Schedule"
                 component={ScheduleScreen}
                 options={{
-                    headerTitle: 'Schedule',
+                    headerStyle: {
+                        backgroundColor: '#2c3e50'
+                    },
+                    headerTitle: <Text
+                        style={[styles.text, { fontSize: 18, color: 'white' }]}
+                    >
+                        Schedule
+                    </Text>,
                     headerLeft: () => (
-                        <Button
-                            onPress={() => alert('This is a button!')}
-                            title="Info"
-                            color="#00cc00"
-                        />
+                        <TouchableOpacity
+                            onPress={() => {
+                                console.log("Clicked");
+                            }}
+                            style={{
+                                marginLeft: 30
+                            }}
+                        >
+                            <Icon name="th-list" color="white" size={24} />
+                        </TouchableOpacity>
+
                     ),
                 }}
             />
+
         </Stack.Navigator>
     )
 }
