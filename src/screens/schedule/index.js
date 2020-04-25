@@ -4,6 +4,7 @@ import {
     View,
     Text,
     Button,
+    TouchableOpacity
 } from 'react-native';
 
 // import { NavigationContainer } from '@react-navigation/native';
@@ -26,7 +27,6 @@ import DrawerScreen from '../../navigators/drawer';
 // const Drawer = createDrawerNavigator();
 
 import { styles } from './style';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 
 class ScheduleScreen extends React.Component {
 
@@ -37,54 +37,6 @@ class ScheduleScreen extends React.Component {
     render() {
 
         return (
-
-
-            // <Drawer.Navigator
-            //     drawerStyle={{
-            //         backgroundColor: '#fff',
-            //     }}
-
-            // >
-            //     <Drawer.Screen
-            //         name="Speakers"
-            //         component={SpeakerScreen}
-            //         options={{
-            //             drawerLabel: () => (
-            //                 <Text style={styles.text}>Speakers</Text>
-            //             ),
-            //             drawerIcon: () => (
-            //                 <Icon name="ios-people" size={24} />
-            //             )
-            //         }}
-            //     />
-            //     <Drawer.Screen
-            //         name="Map"
-            //         component={MapScreen}
-            //         options={{
-            //             drawerLabel: () => (
-            //                 <Text style={styles.text}>Map</Text>
-            //             ),
-            //             drawerIcon: () => (
-            //                 <Icon name="ios-pin" size={24} />
-            //             )
-            //         }}
-            //     />
-            //     <Drawer.Screen
-            //         name="About"
-            //         component={AboutScreen}
-            //         options={{
-            //             drawerLabel: () => (
-            //                 <Text style={styles.text}>About</Text>
-            //             ),
-            //             drawerIcon: () => (
-            //                 <Icon name="ios-information-circle" size={24} />
-            //             )
-            //         }}
-            //     />
-            // </Drawer.Navigator>
-
-
-
 
             <View
                 style={{
@@ -127,7 +79,7 @@ export default function StackScheduleScreen({ navigation }) {
                                 marginLeft: 30
                             }}
                         >
-                            <Icon name="th-list" color="white" size={24} />
+                            <Icon name="th-list" color="white" size={22} />
                         </TouchableOpacity>
 
                     ),

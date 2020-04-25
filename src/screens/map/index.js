@@ -3,11 +3,18 @@ import React from 'react';
 import {
     View,
     Text,
+    TouchableOpacity
 } from 'react-native';
+
+import Icon from 'react-native-vector-icons/FontAwesome';
+
+import { createStackNavigator } from '@react-navigation/stack';
+
+const Stack = createStackNavigator();
 
 import { styles } from './style';
 
-export default class MapScreen extends React.Component {
+class MapScreen extends React.Component {
 
     constructor(props) {
         super(props);
@@ -29,4 +36,40 @@ export default class MapScreen extends React.Component {
         );
     }
 
+}
+
+export default function StackMapScreen({ navigation }) {
+    console.log(navigation);
+    return (
+        <Stack.Navigator>
+            <Stack.Screen
+                name="Map"
+                component={MapScreen}
+                options={{
+                    headerStyle: {
+                        backgroundColor: '#2c3e50'
+                    },
+                    headerTitle: <Text
+                        style={[styles.text, { fontSize: 18, color: 'white' }]}
+                    >
+                        Map
+                    </Text>,
+                    headerLeft: () => (
+                        <TouchableOpacity
+                            onPress={() => {
+                                console.log("Clicked");
+                            }}
+                            style={{
+                                marginLeft: 30
+                            }}
+                        >
+                            <Icon name="th-list" color="white" size={22} />
+                        </TouchableOpacity>
+
+                    ),
+                }}
+            />
+
+        </Stack.Navigator>
+    )
 }
