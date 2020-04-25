@@ -6,11 +6,7 @@ import {
     TouchableOpacity
 } from 'react-native';
 
-import Icon from 'react-native-vector-icons/FontAwesome';
-
-import { createStackNavigator } from '@react-navigation/stack';
-
-const Stack = createStackNavigator();
+import StackNavigator from '../../navigators/stack';
 
 import { styles } from './style';
 
@@ -41,35 +37,6 @@ class AboutScreen extends React.Component {
 export default function StackAboutScreen({ navigation }) {
     console.log(navigation);
     return (
-        <Stack.Navigator>
-            <Stack.Screen
-                name="About"
-                component={AboutScreen}
-                options={{
-                    headerStyle: {
-                        backgroundColor: '#2c3e50'
-                    },
-                    headerTitle: <Text
-                        style={[styles.text, { fontSize: 18, color: 'white' }]}
-                    >
-                        About
-                    </Text>,
-                    headerLeft: () => (
-                        <TouchableOpacity
-                            onPress={() => {
-                                console.log("Clicked");
-                            }}
-                            style={{
-                                marginLeft: 30
-                            }}
-                        >
-                            <Icon name="th-list" color="white" size={22} />
-                        </TouchableOpacity>
-
-                    ),
-                }}
-            />
-
-        </Stack.Navigator>
+        <StackNavigator stackName="About" stackComponent={AboutScreen} />
     )
 }
