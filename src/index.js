@@ -19,7 +19,7 @@ import AppIntroSlider from 'react-native-app-intro-slider';
 
 import Icon from 'react-native-vector-icons/Ionicons';
 
-import TabScreen from './screens/tabs';
+import DrawerScreen from './navigators/drawer';
 
 const slides = [
   {
@@ -120,7 +120,7 @@ export default class App extends React.Component {
       return (
         <>
           <StatusBar barStyle="dark-content" />
-          <TabScreen />
+          <DrawerScreen />
         </>
 
       );
