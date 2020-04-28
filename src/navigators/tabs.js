@@ -27,7 +27,7 @@ export default class TabScreen extends React.Component {
         return (
             <>
 
-                <StatusBar backgroundColor="#2c3e50"></StatusBar>
+                {/* <StatusBar backgroundColor="#2c3e50"></StatusBar> */}
 
                 {/* <NavigationContainer> */}
 
