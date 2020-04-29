@@ -3,6 +3,12 @@
   <h1>React Native Conference App</h1>
 </div>
 
+<div align="center" style="margin-bottom:30px">
+    <a href='https://github.com/PabonSEC/React-Native-Conference-App/blob/master/LICENSE'>
+      <img src="https://img.shields.io/badge/License-MIT-green" alt="Logo" />
+    </a>
+</div>
+
 ## My Environment
 
 - **react-native (v0.62.2)**

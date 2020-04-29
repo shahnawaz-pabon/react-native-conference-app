@@ -32,6 +32,7 @@ export default class StackNavigator extends React.Component {
                 //     headerStyle: { backgroundColor: 'tomato' },
                     
                 // }}
+
             >
                 <Stack.Screen
                     name={stackName}
