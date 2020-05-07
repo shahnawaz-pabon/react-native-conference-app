@@ -3,12 +3,14 @@ import React from 'react';
 import {
     View,
     Text,
-    StyleSheet
+    StyleSheet,
+    SafeAreaView,
+    ScrollView
 } from 'react-native';
 
-import { NavigationContainer } from '@react-navigation/native';
+import { createAppContainer } from 'react-navigation';
 
-import { createDrawerNavigator } from '@react-navigation/drawer';
+import { createDrawerNavigator } from 'react-navigation-drawer';
 
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -18,59 +20,26 @@ import MapScreen from '../screens/map';
 import AboutScreen from '../screens/about';
 import TabScreen from './tabs';
 
-
-const Drawer = createDrawerNavigator();
-
-
-export default class DrawerScreen extends React.Component {
-
-    constructor(props) {
-        super(props);
+const Drawer = createDrawerNavigator({
+    Home: {
+        screen: TabScreen,
+        navigationOptions: {
+            drawerLabel: () => (
+                <Text style={styles.text}>Home</Text>
+            ),
+            drawerIcon: () => (
+                <Icon name="ios-people" size={24} />
+            )
+        }
     }
+}, {
+    initialRouteName: 'Home',
+    contentOptions: {
+        activeTintColor: '#e91e63',
+    },
+});
 
-    render() {
-        return (
-            <NavigationContainer>
-
-                <Drawer.Navigator
-                    drawerStyle={{
-                        backgroundColor: '#fff',
-                    }}
-
-                >
-                    <Drawer.Screen
-                        name="Tabs"
-                        component={TabScreen}
-                        options={{
-                            drawerLabel: () => (
-                                <Text style={styles.text}>Tabs</Text>
-                            ),
-                            drawerIcon: () => (
-                                <Icon name="ios-people" size={24} />
-                            )
-                        }}
-                    />
-                    
-                </Drawer.Navigator>
-
-            </NavigationContainer>
-
-
-            // <View
-            //     style={{
-            //         flex: 1,
-            //         justifyContent: 'center',
-            //         alignItems: 'center',
-            //         padding: 50,
-            //     }}>
-            //     <Text style={{ fontFamily: 'Ubuntu-Bold', fontSize: 18 }}>
-            //         This is ScheduleScreen
-            //   </Text>
-            // </View>
-        );
-    }
-
-}
+export default createAppContainer(Drawer);
 
 const styles = StyleSheet.create({
     text: {

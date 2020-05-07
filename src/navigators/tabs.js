@@ -18,8 +18,6 @@ import SpeakerScreen from '../screens/speakers';
 import MapScreen from '../screens/map';
 import AboutScreen from '../screens/about';
 
-const Tab = createMaterialBottomTabNavigator();
-
 export default createMaterialBottomTabNavigator(
     {
         Schedule: {
