@@ -13,15 +13,22 @@ import { createMaterialBottomTabNavigator } from 'react-navigation-material-bott
 
 import Icon from 'react-native-vector-icons/Ionicons';
 
-import StackScheduleScreen from '../screens/schedule';
+import ScheduleScreen from '../screens/schedule';
 import SpeakerScreen from '../screens/speakers';
 import MapScreen from '../screens/map';
 import AboutScreen from '../screens/about';
 
-export default createMaterialBottomTabNavigator(
+const styles = StyleSheet.create({
+    text: {
+        fontFamily: 'Ubuntu-Bold',
+        fontSize: 14
+    }
+});
+
+const TabScreen = createMaterialBottomTabNavigator(
     {
         Schedule: {
-            screen: StackScheduleScreen,
+            screen: ScheduleScreen,
             navigationOptions: {
                 title: <Text>Title</Text>,
                 tabBarLabel: <Text style={styles.text}>Schedule</Text>,
@@ -69,9 +76,5 @@ export default createMaterialBottomTabNavigator(
     }
 );
 
-const styles = StyleSheet.create({
-    text: {
-        fontFamily: 'Ubuntu-Bold',
-        fontSize: 14
-    }
-})
+export default TabScreen;
+

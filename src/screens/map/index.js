@@ -10,7 +10,7 @@ import StackNavigator from '../../navigators/stack';
 
 import { styles } from './style';
 
-class MapScreen extends React.Component {
+export default class MapScreen extends React.Component {
 
     constructor(props) {
         super(props);
@@ -34,9 +34,9 @@ class MapScreen extends React.Component {
 
 }
 
-export default function StackMapScreen({ navigation }) {
-    console.log(navigation);
-    return (
-        <StackNavigator stackName="Map" stackComponent={MapScreen} />
-    )
-}
+// export default function StackMapScreen({ navigation }) {
+//     console.log(navigation);
+//     return (
+//         <StackNavigator stackName="Map" stackComponent={MapScreen} />
+//     )
+// }

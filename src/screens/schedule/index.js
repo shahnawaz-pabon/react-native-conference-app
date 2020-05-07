@@ -5,11 +5,11 @@ import {
     Text
 } from 'react-native';
 
-import StackNavigator from '../../navigators/stack';
+// import StackNavigator from '../../navigators/stack';
 
 import { styles } from './style';
 
-class ScheduleScreen extends React.Component {
+export default class ScheduleScreen extends React.Component {
 
     constructor(props) {
         super(props);
@@ -35,9 +35,9 @@ class ScheduleScreen extends React.Component {
 
 }
 
-export default function StackScheduleScreen({ navigation }) {
-    console.log(navigation);
-    return (
-        <StackNavigator stackName="Schedule" stackComponent={ScheduleScreen} />
-    )
-}
+// export default function StackScheduleScreen({ navigation }) {
+//     console.log(navigation);
+//     return (
+//         <StackNavigator stackName="Schedule" stackComponent={ScheduleScreen} />
+//     )
+// }

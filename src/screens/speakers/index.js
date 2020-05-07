@@ -10,7 +10,7 @@ import StackNavigator from '../../navigators/stack';
 
 import { styles } from './style';
 
-class SpeakerScreen extends React.Component {
+export default class SpeakerScreen extends React.Component {
 
     constructor(props) {
         super(props);
@@ -34,9 +34,9 @@ class SpeakerScreen extends React.Component {
 
 }
 
-export default function StackSpeakerScreen({ navigation }) {
-    console.log(navigation);
-    return (
-        <StackNavigator stackName="Speakers" stackComponent={SpeakerScreen} />
-    )
-}
+// export default function StackSpeakerScreen({ navigation }) {
+//     console.log(navigation);
+//     return (
+//         <StackNavigator stackName="Speakers" stackComponent={SpeakerScreen} />
+//     )
+// }

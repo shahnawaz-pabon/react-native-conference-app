@@ -20,6 +20,13 @@ import MapScreen from '../screens/map';
 import AboutScreen from '../screens/about';
 import TabScreen from './tabs';
 
+const styles = StyleSheet.create({
+    text: {
+        fontFamily: 'Ubuntu-Bold',
+        fontSize: 14
+    }
+})
+
 const Drawer = createDrawerNavigator({
     Home: {
         screen: TabScreen,
@@ -39,11 +46,6 @@ const Drawer = createDrawerNavigator({
     },
 });
 
-export default createAppContainer(Drawer);
+const DrawerScreen = createAppContainer(Drawer);
 
-const styles = StyleSheet.create({
-    text: {
-        fontFamily: 'Ubuntu-Bold',
-        fontSize: 14
-    }
-})
+export default DrawerScreen;

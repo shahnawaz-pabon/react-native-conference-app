@@ -10,7 +10,7 @@ import StackNavigator from '../../navigators/stack';
 
 import { styles } from './style';
 
-class AboutScreen extends React.Component {
+export default class AboutScreen extends React.Component {
 
     constructor(props) {
         super(props);
@@ -34,9 +34,9 @@ class AboutScreen extends React.Component {
 
 }
 
-export default function StackAboutScreen({ navigation }) {
-    console.log(navigation);
-    return (
-        <StackNavigator stackName="About" stackComponent={AboutScreen} />
-    )
-}
+// export default function StackAboutScreen({ navigation }) {
+//     console.log(navigation);
+//     return (
+//         <StackNavigator stackName="About" stackComponent={AboutScreen} />
+//     )
+// }
