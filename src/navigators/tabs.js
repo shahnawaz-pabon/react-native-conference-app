@@ -30,51 +30,51 @@ const TabScreen = createMaterialBottomTabNavigator(
         Schedule: {
             screen: ScheduleScreen,
             navigationOptions: {
-                title: <Text>Title</Text>,
                 tabBarLabel: <Text style={styles.text}>Schedule</Text>,
-                tabBarIcon: ({ color }) => (
-                    <Icon name="ios-calendar" color={color} size={24} />
+                tabBarIcon: () => (
+                    <Icon name="ios-calendar" size={24} />
                 ),
             }
         },
         Speakers: {
             screen: SpeakerScreen,
             navigationOptions: {
-                title: <Text>Title</Text>,
                 tabBarLabel: <Text style={styles.text}>Speakers</Text>,
-                tabBarIcon: ({ color }) => (
-                    <Icon name="ios-people" color={color} size={24} />
+                tabBarIcon: () => (
+                    <Icon name="ios-people" size={24} />
                 ),
             }
         },
         Map: {
             screen: MapScreen,
             navigationOptions: {
-                title: <Text>Title</Text>,
                 tabBarLabel: <Text style={styles.text}>Map</Text>,
-                tabBarIcon: ({ color }) => (
-                    <Icon name="ios-pin" color={color} size={24} />
+                tabBarIcon: () => (
+                    <Icon name="ios-pin" size={24} />
                 ),
             }
         },
         About: {
             screen: AboutScreen,
             navigationOptions: {
-                title: <Text>Title</Text>,
                 tabBarLabel: <Text style={styles.text}>About</Text>,
-                tabBarIcon: ({ color }) => (
-                    <Icon name="ios-information-circle" color={color} size={24} />
+                tabBarIcon: () => (
+                    <Icon name="ios-information-circle" size={24} />
                 ),
             }
         },
     },
     {
         initialRouteName: 'Schedule',
-        activeColor: '#f0edf6',
-        inactiveColor: '#7f8c8d',
+        backBehavior: 'initialRoute',
+        // active
+        // activeColor: '#fff',
+        inactiveColor: '#000',
         barStyle: { backgroundColor: '#2c3e50' },
     }
 );
 
 export default TabScreen;
+
+// f0edf6 7f8c8d
 

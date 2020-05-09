@@ -41,9 +41,10 @@ const Drawer = createDrawerNavigator({
     }
 }, {
     initialRouteName: 'Home',
-    contentOptions: {
-        activeTintColor: '#e91e63',
-    },
+    drawerPosition: 'left',
+    // contentOptions: {
+    //     activeTintColor: '#e91e63',
+    // },
 });
 
 const DrawerScreen = createAppContainer(Drawer);
