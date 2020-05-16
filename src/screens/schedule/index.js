@@ -5,11 +5,19 @@ import {
     Text
 } from 'react-native';
 
+import { createStackNavigator } from 'react-navigation-stack';
+
 // import StackNavigator from '../../navigators/stack';
 
 import { styles } from './style';
 
-export default class ScheduleScreen extends React.Component {
+class ScheduleScreen extends React.Component {
+
+    static navigationOptions = {
+        title: 'Home',
+        /* No more header config here! */
+    };
+
 
     constructor(props) {
         super(props);
@@ -34,6 +42,28 @@ export default class ScheduleScreen extends React.Component {
     }
 
 }
+
+const StackScheduleScreen = createStackNavigator(
+    {
+        Schedule: ScheduleScreen,
+        //   Details: DetailsScreen,
+    },
+    {
+        //   initialRouteName: 'Schedule',
+        /* The header config from HomeScreen is now here */
+        defaultNavigationOptions: {
+            headerStyle: {
+                backgroundColor: '#f4511e',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+                fontWeight: 'bold',
+            },
+        },
+    }
+);
+
+export default StackScheduleScreen;
 
 // export default function StackScheduleScreen({ navigation }) {
 //     console.log(navigation);

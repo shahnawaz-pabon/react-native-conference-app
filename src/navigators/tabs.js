@@ -13,7 +13,8 @@ import { createMaterialBottomTabNavigator } from 'react-navigation-material-bott
 
 import Icon from 'react-native-vector-icons/Ionicons';
 
-import ScheduleScreen from '../screens/schedule';
+// import ScheduleScreen from '../screens/schedule';
+import StackScheduleScreen from '../screens/schedule';
 import SpeakerScreen from '../screens/speakers';
 import MapScreen from '../screens/map';
 import AboutScreen from '../screens/about';
@@ -28,7 +29,7 @@ const styles = StyleSheet.create({
 const TabScreen = createMaterialBottomTabNavigator(
     {
         Schedule: {
-            screen: ScheduleScreen,
+            screen: StackScheduleScreen,
             navigationOptions: {
                 tabBarLabel: <Text style={styles.text}>Schedule</Text>,
                 tabBarIcon: () => (
