@@ -35,7 +35,7 @@ const Drawer = createDrawerNavigator({
                 <Text style={styles.text}>Home</Text>
             ),
             drawerIcon: () => (
-                <Icon name="ios-people" size={24} />
+                <Icon name="ios-briefcase" size={24} />
             )
         }
     }
