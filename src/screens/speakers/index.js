@@ -6,11 +6,17 @@ import {
     TouchableOpacity
 } from 'react-native';
 
-import StackNavigator from '../../navigators/stack';
+import { createStackNavigator } from 'react-navigation-stack';
 
 import { styles } from './style';
 
-export default class SpeakerScreen extends React.Component {
+class SpeakerScreen extends React.Component {
+
+    static navigationOptions = {
+        // headerTitle instead of title
+        headerTitle: () => <Text style={[styles.text, { fontSize: 20 }]}>Speakers</Text>,
+
+    };
 
     constructor(props) {
         super(props);
@@ -33,6 +39,29 @@ export default class SpeakerScreen extends React.Component {
     }
 
 }
+
+const StackSpeakerScreen = createStackNavigator(
+    {
+        Schedule: SpeakerScreen,
+        //   Details: DetailsScreen,
+    },
+    {
+        //   initialRouteName: 'Schedule',
+        /* The header config from HomeScreen is now here */
+        defaultNavigationOptions: {
+            headerStyle: {
+                backgroundColor: '#2c3e50',
+            },
+            headerTintColor: '#fff',
+            // headerTitleStyle: {
+            //     fontWeight: 'bold',
+            //     fontFamily: 'Ubuntu-Bold'
+            // },
+        },
+    }
+);
+
+export default StackSpeakerScreen;
 
 // export default function StackSpeakerScreen({ navigation }) {
 //     console.log(navigation);

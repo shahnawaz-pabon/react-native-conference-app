@@ -15,7 +15,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 // import ScheduleScreen from '../screens/schedule';
 import StackScheduleScreen from '../screens/schedule';
-import SpeakerScreen from '../screens/speakers';
+import StackSpeakerScreen from '../screens/speakers';
 import MapScreen from '../screens/map';
 import AboutScreen from '../screens/about';
 
@@ -38,7 +38,7 @@ const TabScreen = createMaterialBottomTabNavigator(
             }
         },
         Speakers: {
-            screen: SpeakerScreen,
+            screen: StackSpeakerScreen,
             navigationOptions: {
                 tabBarLabel: <Text style={styles.text}>Speakers</Text>,
                 tabBarIcon: () => (

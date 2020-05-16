@@ -7,17 +7,15 @@ import {
 
 import { createStackNavigator } from 'react-navigation-stack';
 
-// import StackNavigator from '../../navigators/stack';
-
 import { styles } from './style';
 
 class ScheduleScreen extends React.Component {
 
     static navigationOptions = {
-        title: 'Home',
-        /* No more header config here! */
-    };
+        // headerTitle instead of title
+        headerTitle: () => <Text style={[styles.text, { fontSize: 20 }]}>Schedule</Text>,
 
+    };
 
     constructor(props) {
         super(props);
@@ -53,12 +51,13 @@ const StackScheduleScreen = createStackNavigator(
         /* The header config from HomeScreen is now here */
         defaultNavigationOptions: {
             headerStyle: {
-                backgroundColor: '#f4511e',
+                backgroundColor: '#2c3e50',
             },
             headerTintColor: '#fff',
-            headerTitleStyle: {
-                fontWeight: 'bold',
-            },
+            // headerTitleStyle: {
+            //     fontWeight: 'bold',
+            //     fontFamily: 'Ubuntu-Bold'
+            // },
         },
     }
 );
