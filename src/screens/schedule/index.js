@@ -2,20 +2,34 @@ import React from 'react';
 
 import {
     View,
-    Text
+    Text,
+    TouchableOpacity
 } from 'react-native';
 
 import { createStackNavigator } from 'react-navigation-stack';
+
+import Icon from 'react-native-vector-icons/Ionicons';
 
 import { styles } from './style';
 
 class ScheduleScreen extends React.Component {
 
-    static navigationOptions = {
-        // headerTitle instead of title
-        headerTitle: () => <Text style={[styles.text, { fontSize: 20 }]}>Schedule</Text>,
+    static navigationOptions = ({ navigation }) => {
+        return {
+            // headerTitle instead of title
+            headerLeft: () => (
+                <TouchableOpacity onPress={() => {
+                    console.log("PRessed...");
+                    navigation
+                }}>
+                    <Icon name="md-list-box" color="#fff" size={32} />
+                </TouchableOpacity>
+            ),
+            headerTitle: () => <Text style={[styles.text, { fontSize: 20 }]}>Schedule</Text>,
 
-    };
+        };
+
+    }
 
     constructor(props) {
         super(props);
