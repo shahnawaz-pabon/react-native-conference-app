@@ -5,6 +5,7 @@ import {
 export const styles = StyleSheet.create({
     text: {
         fontFamily: 'Ubuntu-Bold',
-        fontSize: 14
+        fontSize: 14,
+        color: '#fff'
     }
 })

@@ -16,8 +16,8 @@ import Icon from 'react-native-vector-icons/Ionicons';
 // import ScheduleScreen from '../screens/schedule';
 import StackScheduleScreen from '../screens/schedule';
 import StackSpeakerScreen from '../screens/speakers';
-import MapScreen from '../screens/map';
-import AboutScreen from '../screens/about';
+import StackMapScreen from '../screens/map';
+import StackAboutScreen from '../screens/about';
 
 const styles = StyleSheet.create({
     text: {
@@ -55,7 +55,7 @@ const TabScreen = createMaterialBottomTabNavigator(
             }
         },
         Map: {
-            screen: MapScreen,
+            screen: StackMapScreen,
             navigationOptions: {
                 tabBarLabel: <Text style={styles.text}>Map</Text>,
                 tabBarIcon: ({ tintColor }) => (
@@ -64,7 +64,7 @@ const TabScreen = createMaterialBottomTabNavigator(
             }
         },
         About: {
-            screen: AboutScreen,
+            screen: StackAboutScreen,
             navigationOptions: {
                 tabBarLabel: <Text style={styles.text}>About</Text>,
                 tabBarIcon: ({ tintColor }) => (
