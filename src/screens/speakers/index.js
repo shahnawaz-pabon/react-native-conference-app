@@ -8,11 +8,21 @@ import {
 
 import { createStackNavigator } from 'react-navigation-stack';
 
+import Icon from 'react-native-vector-icons/Ionicons';
+
 import { styles } from './style';
 
 class SpeakerScreen extends React.Component {
 
     static navigationOptions = {
+        headerLeft: () => (
+            <TouchableOpacity style={{ marginLeft: 15 }} onPress={() => {
+                console.log("PRessed...");
+                // navigation
+            }}>
+                <Icon name="md-list-box" color="#fff" size={32} />
+            </TouchableOpacity>
+        ),
         // headerTitle instead of title
         headerTitle: () => <Text style={[styles.text, { fontSize: 20 }]}>Speakers</Text>,
 

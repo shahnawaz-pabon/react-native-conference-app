@@ -14,25 +14,31 @@ import { styles } from './style';
 
 class ScheduleScreen extends React.Component {
 
-    static navigationOptions = ({ navigation }) => {
-        return {
-            // headerTitle instead of title
+    static navigationOptions = ({ navigation, screenProps }) => ({
+        
+        // return {
             headerLeft: () => (
-                <TouchableOpacity onPress={() => {
-                    console.log("PRessed...");
-                    navigation
+                <TouchableOpacity style={{ marginLeft: 15 }} onPress={() => {
+                    
+                    // navigation.toggleDrawer();
+                    // console.log(navigation);
                 }}>
                     <Icon name="md-list-box" color="#fff" size={32} />
                 </TouchableOpacity>
             ),
+            // headerTitle instead of title
             headerTitle: () => <Text style={[styles.text, { fontSize: 20 }]}>Schedule</Text>,
 
-        };
+        // };
 
-    }
+    })
 
     constructor(props) {
         super(props);
+    }
+
+    toggleDrawer(){
+        this.props.navigation.toggleDrawer();
     }
 
     render() {

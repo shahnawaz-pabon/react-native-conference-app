@@ -26,14 +26,22 @@ const styles = StyleSheet.create({
     }
 });
 
+const bottomTabConfig = {
+    initialRouteName: 'Schedule',
+    backBehavior: 'initialRoute',
+    activeColor: '#f0edf6',
+    inactiveColor: '#7f8c8d',
+    barStyle: { backgroundColor: '#2c3e50' },
+};
+
 const TabScreen = createMaterialBottomTabNavigator(
     {
         Schedule: {
             screen: StackScheduleScreen,
             navigationOptions: {
                 tabBarLabel: <Text style={styles.text}>Schedule</Text>,
-                tabBarIcon: () => (
-                    <Icon name="ios-calendar" size={24} />
+                tabBarIcon: ({ tintColor }) => (
+                    <Icon style={{ color: tintColor }} name="ios-calendar" size={24} />
                 ),
             }
         },
@@ -41,8 +49,8 @@ const TabScreen = createMaterialBottomTabNavigator(
             screen: StackSpeakerScreen,
             navigationOptions: {
                 tabBarLabel: <Text style={styles.text}>Speakers</Text>,
-                tabBarIcon: () => (
-                    <Icon name="ios-people" size={24} />
+                tabBarIcon: ({ tintColor }) => (
+                    <Icon style={{ color: tintColor }} name="ios-people" size={24} />
                 ),
             }
         },
@@ -50,8 +58,8 @@ const TabScreen = createMaterialBottomTabNavigator(
             screen: MapScreen,
             navigationOptions: {
                 tabBarLabel: <Text style={styles.text}>Map</Text>,
-                tabBarIcon: () => (
-                    <Icon name="ios-pin" size={24} />
+                tabBarIcon: ({ tintColor }) => (
+                    <Icon style={{ color: tintColor }} name="ios-pin" size={24} />
                 ),
             }
         },
@@ -59,23 +67,14 @@ const TabScreen = createMaterialBottomTabNavigator(
             screen: AboutScreen,
             navigationOptions: {
                 tabBarLabel: <Text style={styles.text}>About</Text>,
-                tabBarIcon: () => (
-                    <Icon name="ios-information-circle" size={24} />
+                tabBarIcon: ({ tintColor }) => (
+                    <Icon style={{ color: tintColor }} name="ios-information-circle" size={24} />
                 ),
             }
         },
     },
-    {
-        initialRouteName: 'Schedule',
-        backBehavior: 'initialRoute',
-        // active
-        // activeColor: '#fff',
-        inactiveColor: '#000',
-        barStyle: { backgroundColor: '#2c3e50' },
-    }
+    bottomTabConfig
 );
 
-export default TabScreen;
-
-// f0edf6 7f8c8d
+export default TabScreen; 
 
