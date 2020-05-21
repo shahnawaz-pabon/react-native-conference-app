@@ -14,11 +14,10 @@ import { styles } from './style';
 
 class SpeakerScreen extends React.Component {
 
-    static navigationOptions = {
+    static navigationOptions = ({ navigation }) => ({
         headerLeft: () => (
             <TouchableOpacity style={{ marginLeft: 15 }} onPress={() => {
-                console.log("PRessed...");
-                // navigation
+                navigation.openDrawer();
             }}>
                 <Icon name="md-list-box" color="#fff" size={32} />
             </TouchableOpacity>
@@ -26,7 +25,7 @@ class SpeakerScreen extends React.Component {
         // headerTitle instead of title
         headerTitle: () => <Text style={[styles.text, { fontSize: 20 }]}>Speakers</Text>,
 
-    };
+    });
 
     constructor(props) {
         super(props);
