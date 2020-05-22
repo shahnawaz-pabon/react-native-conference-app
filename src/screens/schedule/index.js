@@ -3,7 +3,8 @@ import React from 'react';
 import {
     View,
     Text,
-    TouchableOpacity
+    TouchableOpacity,
+    StatusBar
 } from 'react-native';
 
 import { createStackNavigator } from 'react-navigation-stack';
@@ -35,18 +36,20 @@ class ScheduleScreen extends React.Component {
     render() {
 
         return (
-
-            <View
-                style={{
-                    flex: 1,
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    padding: 50,
-                }}>
-                <Text style={{ fontFamily: 'Ubuntu-Bold', fontSize: 18 }}>
-                    This is ScheduleScreen
+            <>
+                <StatusBar backgroundColor="#2c3e50" barStyle="light-content" />
+                <View
+                    style={{
+                        flex: 1,
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        padding: 50,
+                    }}>
+                    <Text style={{ fontFamily: 'Ubuntu-Bold', fontSize: 18 }}>
+                        This is ScheduleScreen
               </Text>
-            </View>
+                </View>
+            </>
         );
     }
 
