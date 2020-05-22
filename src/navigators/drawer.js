@@ -5,12 +5,13 @@ import {
     Text,
     StyleSheet,
     SafeAreaView,
-    ScrollView
+    ScrollView,
+    Image
 } from 'react-native';
 
 import { createAppContainer } from 'react-navigation';
 
-import { createDrawerNavigator } from 'react-navigation-drawer';
+import { createDrawerNavigator, DrawerItems } from 'react-navigation-drawer';
 
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -25,7 +26,23 @@ const styles = StyleSheet.create({
         fontFamily: 'Ubuntu-Bold',
         fontSize: 14
     }
-})
+});
+
+class CustomDrawerComponent extends React.Componect{
+    render(){
+        return (
+            <SafeAreaView style={{ flex: 1 }}>
+                <View>
+                    <Image source={{ 'uri': 'https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_960_720.jpg' }} />
+                </View>
+                <ScrollView>
+                    <DrawerItems {...props} />
+
+                </ScrollView>
+            </SafeAreaView>
+        )
+    }
+}
 
 const Drawer = createDrawerNavigator({
     Home: {
@@ -40,8 +57,9 @@ const Drawer = createDrawerNavigator({
         }
     }
 }, {
-    initialRouteName: 'Home',
-    drawerPosition: 'left',
+    contentComponent: CustomDrawerComponent,
+    // initialRouteName: 'Home',
+    // drawerPosition: 'left',
     // contentOptions: {
     //     activeTintColor: '#e91e63',
     // },
