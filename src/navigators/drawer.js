@@ -9,9 +9,9 @@ import {
     Image
 } from 'react-native';
 
-import { createAppContainer } from 'react-navigation';
+import { NavigationContainer } from '@react-navigation/native';
 
-import { createDrawerNavigator, DrawerItems } from 'react-navigation-drawer';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
 import Icon from 'react-native-vector-icons/Ionicons';
 
