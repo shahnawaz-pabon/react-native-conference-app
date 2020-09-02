@@ -19,7 +19,7 @@ import AppIntroSlider from 'react-native-app-intro-slider';
 
 import Icon from 'react-native-vector-icons/Ionicons';
 
-import DrawerScreen from './navigators/drawer';
+import DrawerScreen from './navigators/testdrawer';
 
 const slides = [
   {

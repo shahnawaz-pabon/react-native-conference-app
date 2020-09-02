@@ -6,7 +6,7 @@ import {
     TouchableOpacity
 } from 'react-native';
 
-import { createStackNavigator } from 'react-navigation-stack';
+import { createStackNavigator } from '@react-navigation/stack';
 
 import StackNavigator from '../../navigators/stack';
 
@@ -52,26 +52,28 @@ class AboutScreen extends React.Component {
 
 }
 
-const StackAboutScreen = createStackNavigator(
-    {
-        About: AboutScreen,
-        //   Details: DetailsScreen,
-    },
-    {
-        //   initialRouteName: 'Schedule',
-        /* The header config from HomeScreen is now here */
-        defaultNavigationOptions: {
-            headerStyle: {
-                backgroundColor: '#2c3e50',
-            },
-            headerTintColor: '#fff',
-            // headerTitleStyle: {
-            //     fontWeight: 'bold',
-            //     fontFamily: 'Ubuntu-Bold'
-            // },
-        },
-    }
-);
+const Stack = createStackNavigator();
+
+function StackAboutScreen() {
+    return (
+        <Stack.Navigator>
+            <Stack.Screen
+                name="About"
+                component={AboutScreen}
+                options={{
+                    headerStyle: {
+                        backgroundColor: '#2c3e50',
+                    },
+                    headerTintColor: '#fff',
+                    // headerTitleStyle: {
+                    //     fontWeight: 'bold',
+                    //     fontFamily: 'Ubuntu-Bold'
+                    // },
+                }}
+            />
+        </Stack.Navigator>
+    );
+}
 
 export default StackAboutScreen;
 

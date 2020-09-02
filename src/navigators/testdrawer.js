@@ -1,12 +1,17 @@
+import { View, Text } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import TabScreen from './tabs';
 
 const Drawer = createDrawerNavigator();
 
-function MyDrawer() {
-  return (
-    <Drawer.Navigator>
-      <Drawer.Screen name="Feed" component={Feed} />
-      <Drawer.Screen name="Article" component={Article} />
-    </Drawer.Navigator>
-  );
+export default function DrawerScreen() {
+    return (
+        <NavigationContainer>
+            <Drawer.Navigator>
+                <Drawer.Screen name="Home" component={TabScreen} />
+            </Drawer.Navigator>
+        </NavigationContainer>
+
+    );
 }

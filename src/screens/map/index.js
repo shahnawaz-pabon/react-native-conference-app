@@ -6,9 +6,9 @@ import {
     TouchableOpacity
 } from 'react-native';
 
-import { createStackNavigator } from 'react-navigation-stack';
+import { createStackNavigator } from '@react-navigation/stack';
 
-import StackNavigator from '../../navigators/stack';
+// import StackNavigator from '../../navigators/stack';
 
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -51,26 +51,28 @@ class MapScreen extends React.Component {
 
 }
 
-const StackMapScreen = createStackNavigator(
-    {
-        Map: MapScreen,
-        //   Details: DetailsScreen,
-    },
-    {
-        //   initialRouteName: 'Schedule',
-        /* The header config from HomeScreen is now here */
-        defaultNavigationOptions: {
-            headerStyle: {
-                backgroundColor: '#2c3e50',
-            },
-            headerTintColor: '#fff',
-            // headerTitleStyle: {
-            //     fontWeight: 'bold',
-            //     fontFamily: 'Ubuntu-Bold'
-            // },
-        },
-    }
-);
+const Stack = createStackNavigator();
+
+function StackMapScreen() {
+    return (
+        <Stack.Navigator>
+            <Stack.Screen
+                name="Map"
+                component={MapScreen}
+                options={{
+                    headerStyle: {
+                        backgroundColor: '#2c3e50',
+                    },
+                    headerTintColor: '#fff',
+                    // headerTitleStyle: {
+                    //     fontWeight: 'bold',
+                    //     fontFamily: 'Ubuntu-Bold'
+                    // },
+                }}
+            />
+        </Stack.Navigator>
+    );
+}
 
 export default StackMapScreen;
 

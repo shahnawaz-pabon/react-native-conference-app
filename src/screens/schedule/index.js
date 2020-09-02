@@ -7,7 +7,7 @@ import {
     StatusBar
 } from 'react-native';
 
-import { createStackNavigator } from 'react-navigation-stack';
+import { createStackNavigator } from '@react-navigation/stack';
 
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -55,26 +55,28 @@ class ScheduleScreen extends React.Component {
 
 }
 
-const StackScheduleScreen = createStackNavigator(
-    {
-        Schedule: ScheduleScreen,
-        //   Details: DetailsScreen,
-    },
-    {
-        //   initialRouteName: 'Schedule',
-        /* The header config from HomeScreen is now here */
-        defaultNavigationOptions: {
-            headerStyle: {
-                backgroundColor: '#2c3e50',
-            },
-            headerTintColor: '#fff',
-            // headerTitleStyle: {
-            //     fontWeight: 'bold',
-            //     fontFamily: 'Ubuntu-Bold'
-            // },
-        },
-    }
-);
+const Stack = createStackNavigator();
+
+function StackScheduleScreen() {
+    return (
+        <Stack.Navigator>
+            <Stack.Screen
+                name="Schedule"
+                component={ScheduleScreen}
+                options={{
+                    headerStyle: {
+                        backgroundColor: '#2c3e50',
+                    },
+                    headerTintColor: '#fff',
+                    // headerTitleStyle: {
+                    //     fontWeight: 'bold',
+                    //     fontFamily: 'Ubuntu-Bold'
+                    // },
+                }}
+            />
+        </Stack.Navigator>
+    );
+}
 
 export default StackScheduleScreen;
 
