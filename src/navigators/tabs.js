@@ -41,8 +41,8 @@ function TabScreen() {
                 component={StackScheduleScreen}
                 options={{
                     tabBarLabel: <Text style={styles.text}>Schedule</Text>,
-                    tabBarIcon: ({ tintColor }) => (
-                        <Icon style={{ color: tintColor }} name="ios-calendar" size={24} />
+                    tabBarIcon: ({ color }) => (
+                        <Icon color={color} name="ios-calendar" size={24} />
                     ),
                 }}
             />
@@ -51,8 +51,8 @@ function TabScreen() {
                 component={StackSpeakerScreen}
                 options={{
                     tabBarLabel: <Text style={styles.text}>Speakers</Text>,
-                    tabBarIcon: ({ tintColor }) => (
-                        <Icon style={{ color: tintColor }} name="ios-people" size={24} />
+                    tabBarIcon: ({ color }) => (
+                        <Icon color={color} name="ios-people" size={24} />
                     ),
                 }}
             />
@@ -61,8 +61,8 @@ function TabScreen() {
                 component={StackMapScreen}
                 options={{
                     tabBarLabel: <Text style={styles.text}>Map</Text>,
-                    tabBarIcon: ({ tintColor }) => (
-                        <Icon style={{ color: tintColor }} name="ios-pin" size={24} />
+                    tabBarIcon: ({ color }) => (
+                        <Icon color={color} name="ios-pin" size={24} />
                     ),
                 }}
             />
@@ -71,8 +71,8 @@ function TabScreen() {
                 component={StackAboutScreen}
                 options={{
                     tabBarLabel: <Text style={styles.text}>About</Text>,
-                    tabBarIcon: ({ tintColor }) => (
-                        <Icon style={{ color: tintColor }} name="ios-information-circle" size={24} />
+                    tabBarIcon: ({ color }) => (
+                        <Icon color={color} name="ios-information-circle" size={24} />
                     ),
                 }}
             />
