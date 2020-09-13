@@ -14,19 +14,6 @@ import { styles } from './style';
 
 class SpeakerScreen extends React.Component {
 
-    static navigationOptions = ({ navigation }) => ({
-        headerLeft: () => (
-            <TouchableOpacity style={{ marginLeft: 15 }} onPress={() => {
-                navigation.openDrawer();
-            }}>
-                <Icon name="md-list-box" color="#fff" size={32} />
-            </TouchableOpacity>
-        ),
-        // headerTitle instead of title
-        headerTitle: () => <Text style={[styles.text, { fontSize: 20 }]}>Speakers</Text>,
-
-    });
-
     constructor(props) {
         super(props);
     }
@@ -58,12 +45,21 @@ function StackSpeakerScreen() {
             <Stack.Screen
                 name="Speaker"
                 component={SpeakerScreen}
-                options={{
+                options={({ navigation }) => ({
                     headerStyle: {
                         backgroundColor: '#2c3e50',
                     },
                     headerTintColor: '#fff',
-                }}
+                    headerLeft: () => (
+                        <TouchableOpacity style={{ marginLeft: 15 }} onPress={() => {
+                            navigation.openDrawer();
+                        }}>
+                            <Icon name="md-list-box" color="#fff" size={32} />
+                        </TouchableOpacity>
+                    ),
+                    // headerTitle instead of title
+                    headerTitle: () => <Text style={[styles.text, { fontSize: 20 }]}>Speakers</Text>,
+                })}
             />
         </Stack.Navigator>
     );
