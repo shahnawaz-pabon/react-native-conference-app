@@ -16,19 +16,6 @@ import { styles } from './style';
 
 class MapScreen extends React.Component {
 
-    static navigationOptions = ({ navigation }) => ({
-        headerLeft: () => (
-            <TouchableOpacity style={{ marginLeft: 15 }} onPress={() => {
-                navigation.openDrawer();
-            }}>
-                <Icon name="md-list-box" color="#fff" size={32} />
-            </TouchableOpacity>
-        ),
-        // headerTitle instead of title
-        headerTitle: () => <Text style={[styles.text, { fontSize: 20 }]}>Map</Text>,
-
-    });
-
     constructor(props) {
         super(props);
     }
@@ -59,7 +46,7 @@ function StackMapScreen() {
             <Stack.Screen
                 name="Map"
                 component={MapScreen}
-                options={{
+                options={({ navigation }) => ({
                     headerStyle: {
                         backgroundColor: '#2c3e50',
                     },
@@ -68,7 +55,16 @@ function StackMapScreen() {
                     //     fontWeight: 'bold',
                     //     fontFamily: 'Ubuntu-Bold'
                     // },
-                }}
+                    headerLeft: () => (
+                        <TouchableOpacity style={{ marginLeft: 15 }} onPress={() => {
+                            navigation.openDrawer();
+                        }}>
+                            <Icon name="md-list-box" color="#fff" size={32} />
+                        </TouchableOpacity>
+                    ),
+                    // headerTitle instead of title
+                    headerTitle: () => <Text style={[styles.text, { fontSize: 20 }]}>Map</Text>,
+                })}
             />
         </Stack.Navigator>
     );

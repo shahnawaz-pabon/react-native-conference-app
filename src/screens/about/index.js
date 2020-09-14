@@ -16,20 +16,6 @@ import { styles } from './style';
 
 class AboutScreen extends React.Component {
 
-    static navigationOptions = ({ navigation }) => ({
-        headerLeft: () => (
-            <TouchableOpacity style={{ marginLeft: 15 }} onPress={() => {
-                navigation.openDrawer();
-            }}>
-                <Icon name="md-list-box" color="#fff" size={32} />
-            </TouchableOpacity>
-        ),
-        // headerTitle instead of title
-        headerTitle: () => <Text style={[styles.text, { fontSize: 20 }]}>About</Text>,
-
-    });
-
-
     constructor(props) {
         super(props);
     }
@@ -60,7 +46,7 @@ function StackAboutScreen() {
             <Stack.Screen
                 name="About"
                 component={AboutScreen}
-                options={{
+                options={({ navigation }) => ({
                     headerStyle: {
                         backgroundColor: '#2c3e50',
                     },
@@ -69,7 +55,16 @@ function StackAboutScreen() {
                     //     fontWeight: 'bold',
                     //     fontFamily: 'Ubuntu-Bold'
                     // },
-                }}
+                    headerLeft: () => (
+                        <TouchableOpacity style={{ marginLeft: 15 }} onPress={() => {
+                            navigation.openDrawer();
+                        }}>
+                            <Icon name="md-list-box" color="#fff" size={32} />
+                        </TouchableOpacity>
+                    ),
+                    // headerTitle instead of title
+                    headerTitle: () => <Text style={[styles.text, { fontSize: 20 }]}>About</Text>,
+                })}
             />
         </Stack.Navigator>
     );
