@@ -11,7 +11,12 @@ const Drawer = createDrawerNavigator();
 export default function DrawerScreen(props) {
     return (
         <NavigationContainer>
-            <Drawer.Navigator drawerContent={props => <DrawerComponent {...props} />}>
+            <Drawer.Navigator
+                drawerContent={props => <DrawerComponent {...props} />}
+                drawerContentOptions={{
+                    // labelStyle: { fontFamily: "Ubuntu-Bold" }
+                }}
+            >
                 <Drawer.Screen name="Home" component={TabScreen} />
             </Drawer.Navigator>
         </NavigationContainer>
