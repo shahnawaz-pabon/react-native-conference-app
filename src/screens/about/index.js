@@ -63,7 +63,7 @@ function StackAboutScreen() {
                         </TouchableOpacity>
                     ),
                     headerRight: () => (
-                        <TouchableOpacity style={{ marginLeft: 15 }} onPress={() => {
+                        <TouchableOpacity style={{ marginRight: 15 }} onPress={() => {
                             // navigation.openDrawer();
                         }}>
                             <Icon name="ios-more" color="#fff" size={32} />
