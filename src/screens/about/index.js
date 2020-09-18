@@ -62,6 +62,13 @@ function StackAboutScreen() {
                             <Icon name="md-list-box" color="#fff" size={32} />
                         </TouchableOpacity>
                     ),
+                    headerRight: () => (
+                        <TouchableOpacity style={{ marginLeft: 15 }} onPress={() => {
+                            // navigation.openDrawer();
+                        }}>
+                            <Icon name="ios-more" color="#fff" size={32} />
+                        </TouchableOpacity>
+                    ),
                     // headerTitle instead of title
                     headerTitle: () => <Text style={[styles.text, { fontSize: 20 }]}>About</Text>,
                 })}
