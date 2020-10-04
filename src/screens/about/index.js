@@ -14,7 +14,23 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 import { styles } from './style';
 
+import Menu, { MenuItem, MenuDivider } from 'react-native-material-menu';
+
 class AboutScreen extends React.Component {
+
+    _menu = null;
+
+    setMenuRef = ref => {
+        this._menu = ref;
+    };
+
+    hideMenu = () => {
+        this._menu.hide();
+    };
+
+    showMenu = () => {
+        this._menu.show();
+    };
 
     constructor(props) {
         super(props);
