@@ -36,6 +36,12 @@ class AboutScreen extends React.Component {
         super(props);
     }
 
+    componentDidMount() {
+        this.props.navigation.setParams({
+            showMenu: this.showMenu
+        });
+    }
+
     render() {
         return (
             <View
@@ -52,7 +58,7 @@ class AboutScreen extends React.Component {
                 <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
                     <Menu
                         ref={this.setMenuRef}
-                        button={<Text onPress={this.showMenu}>Show menu</Text>}
+                    // button={<Text onPress={this.showMenu}>Show menu</Text>}
                     >
                         <MenuItem onPress={this.hideMenu}>Menu item 1</MenuItem>
                         <MenuItem onPress={this.hideMenu}>Menu item 2</MenuItem>
@@ -96,6 +102,10 @@ function StackAboutScreen() {
                     headerRight: () => (
                         <TouchableOpacity style={{ marginRight: 15 }} onPress={() => {
                             // navigation.openDrawer();
+
+                            const { params } = navigation.state;
+                            params.showMenu();
+
                         }}>
                             <Icon name="ios-more" color="#fff" size={32} />
                         </TouchableOpacity>
