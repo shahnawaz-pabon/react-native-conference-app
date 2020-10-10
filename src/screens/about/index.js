@@ -40,6 +40,7 @@ class AboutScreen extends React.Component {
         this.props.navigation.setParams({
             showMenu: this.showMenu
         });
+        // console.log(this.props.navigation);
     }
 
     render() {
@@ -103,8 +104,11 @@ function StackAboutScreen() {
                         <TouchableOpacity style={{ marginRight: 15 }} onPress={() => {
                             // navigation.openDrawer();
 
-                            const { params } = navigation.state;
-                            params.showMenu();
+                            // const { params } = navigation.state;
+                            // navigation.getParam('showMenu')();
+
+                            console.log("navigation.params");
+                            console.log(navigation.params);
 
                         }}>
                             <Icon name="ios-more" color="#fff" size={32} />
