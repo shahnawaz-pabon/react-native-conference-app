@@ -18,28 +18,14 @@ import Menu, { MenuItem, MenuDivider } from 'react-native-material-menu';
 
 class AboutScreen extends React.Component {
 
-    _menu = null;
-
-    setMenuRef = ref => {
-        this._menu = ref;
-    };
-
-    hideMenu = () => {
-        this._menu.hide();
-    };
-
-    showMenu = () => {
-        this._menu.show();
-    };
-
     constructor(props) {
         super(props);
     }
 
     componentDidMount() {
-        this.props.navigation.setParams({
-            showMenu: this.showMenu
-        });
+        // this.props.navigation.setParams({
+        //     showMenu: this.showMenu
+        // });
         // console.log(this.props.navigation);
     }
 
@@ -55,21 +41,6 @@ class AboutScreen extends React.Component {
                 <Text style={{ fontFamily: 'Ubuntu-Bold', fontSize: 18 }}>
                     This is AboutScreen
               </Text>
-
-                <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                    <Menu
-                        ref={this.setMenuRef}
-                    // button={<Text onPress={this.showMenu}>Show menu</Text>}
-                    >
-                        <MenuItem onPress={this.hideMenu}>Menu item 1</MenuItem>
-                        <MenuItem onPress={this.hideMenu}>Menu item 2</MenuItem>
-                        <MenuItem onPress={this.hideMenu} disabled>
-                            Menu item 3
-                        </MenuItem>
-                        <MenuDivider />
-                        <MenuItem onPress={this.hideMenu}>Menu item 4</MenuItem>
-                    </Menu>
-                </View>
             </View>
         );
     }
@@ -79,6 +50,21 @@ class AboutScreen extends React.Component {
 const Stack = createStackNavigator();
 
 function StackAboutScreen() {
+
+    var _menu = null;
+
+    const setMenuRef = ref => {
+        _menu = ref;
+    };
+
+    const hideMenu = () => {
+        _menu.hide();
+    };
+
+    const showMenu = () => {
+        _menu.show();
+    };
+
     return (
         <Stack.Navigator>
             <Stack.Screen
@@ -101,18 +87,27 @@ function StackAboutScreen() {
                         </TouchableOpacity>
                     ),
                     headerRight: () => (
-                        <TouchableOpacity style={{ marginRight: 15 }} onPress={() => {
-                            // navigation.openDrawer();
-
-                            // const { params } = navigation.state;
-                            // navigation.getParam('showMenu')();
-
-                            console.log("navigation.params");
-                            console.log(navigation.params);
-
-                        }}>
-                            <Icon name="ios-more" color="#fff" size={32} />
-                        </TouchableOpacity>
+                        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+                            <Menu
+                                ref={setMenuRef}
+                                button={
+                                    <TouchableOpacity
+                                        style={{ marginRight: 15 }}
+                                        onPress={showMenu}
+                                    >
+                                        <Icon name="ios-more" color="#fff" size={32} />
+                                    </TouchableOpacity>
+                                }
+                            >
+                                <MenuItem onPress={hideMenu}>Menu item 1</MenuItem>
+                                <MenuItem onPress={hideMenu}>Menu item 2</MenuItem>
+                                <MenuItem onPress={hideMenu} disabled>
+                                    Menu item 3
+                                </MenuItem>
+                                <MenuDivider />
+                                <MenuItem onPress={hideMenu}>Menu item 4</MenuItem>
+                            </Menu>
+                        </View>
                     ),
                     // headerTitle instead of title
                     headerTitle: () => <Text style={[styles.text, { fontSize: 20 }]}>About</Text>,
