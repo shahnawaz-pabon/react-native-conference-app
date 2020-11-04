@@ -37,7 +37,7 @@ const slides = [
     title: 'What is React Native?',
     text: <Text>
       It's a <Text style={{ color: '#00BFA6', fontWeight: 'bold' }}>Javascript Framework </Text>
-      like React that is used to build mobile applications using native components rather than 
+      like React that is used to build mobile applications using native components rather than
       web components.
     </Text>,
     image: require('../assets/images/2.png'),
@@ -67,6 +67,11 @@ export default class App extends React.Component {
       //To show the main page of the app
     };
   }
+
+  componentDidMount(){
+    StatusBar.setBackgroundColor("#2c3e50");
+  }
+
   _renderNextButton = () => {
     return (
       <View style={styles.buttonCircle}>
@@ -118,29 +123,22 @@ export default class App extends React.Component {
     if (this.state.showRealApp) {
       //Real Application
       return (
-        <>
-          <StatusBar barStyle="dark-content" />
-          <DrawerScreen />
-        </>
-
+        <DrawerScreen />
       );
     } else {
       //Intro slides
       return (
-        <>
-          <StatusBar barStyle="dark-content" />
-          <AppIntroSlider
-            slides={slides}
-            renderItem={this._renderItem}
-            onDone={this._onDone}
-            showSkipButton={true}
-            renderDoneButton={this._renderDoneButton}
-            renderNextButton={this._renderNextButton}
-            buttonTextStyle={{ fontFamily: 'Ubuntu-Bold' }}
-            dotStyle={{ backgroundColor: '#fff' }}
-            activeDotStyle={{ backgroundColor: '#00BFA6' }}
-          />
-        </>
+        <AppIntroSlider
+          slides={slides}
+          renderItem={this._renderItem}
+          onDone={this._onDone}
+          showSkipButton={true}
+          renderDoneButton={this._renderDoneButton}
+          renderNextButton={this._renderNextButton}
+          buttonTextStyle={{ fontFamily: 'Ubuntu-Bold' }}
+          dotStyle={{ backgroundColor: '#fff' }}
+          activeDotStyle={{ backgroundColor: '#00BFA6' }}
+        />
 
       );
     }
