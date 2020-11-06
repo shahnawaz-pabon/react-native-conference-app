@@ -99,13 +99,15 @@ function StackAboutScreen() {
                                     </TouchableOpacity>
                                 }
                             >
-                                <MenuItem onPress={hideMenu}>Menu item 1</MenuItem>
-                                <MenuItem onPress={hideMenu}>Menu item 2</MenuItem>
-                                <MenuItem onPress={hideMenu} disabled>
-                                    Menu item 3
-                                </MenuItem>
+                                <MenuItem textStyle={[styles.text, { color: '#000' }]} onPress={hideMenu}>Learn React Native</MenuItem>
                                 <MenuDivider />
-                                <MenuItem onPress={hideMenu}>Menu item 4</MenuItem>
+                                <MenuItem textStyle={[styles.text, { color: '#000' }]} onPress={hideMenu}>Docs</MenuItem>
+                                <MenuDivider />
+                                <MenuItem textStyle={[styles.text, { color: '#000' }]} onPress={hideMenu}>Components</MenuItem>
+                                <MenuDivider />
+                                <MenuItem textStyle={[styles.text, { color: '#000' }]} onPress={hideMenu}>Blog</MenuItem>
+                                <MenuDivider />
+                                <MenuItem textStyle={[styles.text, { color: '#000' }]} onPress={hideMenu}>Support</MenuItem>
                             </Menu>
                         </View>
                     ),

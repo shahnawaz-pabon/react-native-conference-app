@@ -35,6 +35,7 @@ function TabScreen() {
             activeColor="#f0edf6"
             inactiveColor="#7f8c8d"
             barStyle={{ backgroundColor: '#2c3e50' }}
+            sceneAnimationEnabled={false}
         >
             <Tab.Screen
                 name="Schedule"
