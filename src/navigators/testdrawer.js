@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text } from 'react-native';
+// import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { createDrawerNavigator, DrawerContentScrollView, DrawerItem } from '@react-navigation/drawer';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import TabScreen from './tabs';
 
 import { DrawerComponent } from '../components/drawer';
@@ -24,7 +24,6 @@ export default function DrawerScreen(props) {
                     // labelStyle: { fontFamily: "Ubuntu-Bold" }
                 }}
                 drawerStyle={{ width: initRender ? null : "90%" }}
-                drawerType={"slide"}
             >
                 <Drawer.Screen name="Home" component={TabScreen} />
             </Drawer.Navigator>
