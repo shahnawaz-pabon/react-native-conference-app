@@ -1,8 +1,10 @@
 import React from 'react';
 
 import {
+    ScrollView,
     View,
     Text,
+    Image,
     TouchableOpacity
 } from 'react-native';
 
@@ -31,17 +33,18 @@ class AboutScreen extends React.Component {
 
     render() {
         return (
-            <View
-                style={{
-                    flex: 1,
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    padding: 50,
-                }}>
-                <Text style={{ fontFamily: 'Ubuntu-Bold', fontSize: 18 }}>
-                    This is AboutScreen
-              </Text>
-            </View>
+
+            <ScrollView style={styles.scroll}>
+                <View style={styles.container}>
+                    <View style={styles.header}>
+                        <View style={styles.headerContent}>
+                            <Image style={styles.avatar}
+                                source={require('../../../assets/images/icon.png')} />
+                            <Text style={{ ...styles.text, ...styles.logoName }}>React Native</Text>
+                        </View>
+                    </View>
+                </View>
+            </ScrollView>
         );
     }
 

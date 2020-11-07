@@ -7,5 +7,29 @@ export const styles = StyleSheet.create({
         fontFamily: 'Ubuntu-Bold',
         fontSize: 14,
         color: '#fff'
-    }
+    },
+    scroll: {
+        backgroundColor: 'white',
+    },
+    container: {
+        flex: 1
+    },
+    header: {
+        backgroundColor: "#2c3e50",
+    },
+    headerContent: {
+        padding: 30,
+        alignItems: 'center',
+    },
+    avatar: {
+        width: 110,
+        height: 110,
+        borderRadius: 63,
+        borderWidth: 4,
+        borderColor: "white",
+        marginBottom: 10,
+    },
+    logoName: {
+        fontSize: 18,
+    },
 })
