@@ -16,6 +16,8 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 import { styles } from './style';
 
+import InfoText from '../../components/InfoText';
+
 import Menu, { MenuItem, MenuDivider } from 'react-native-material-menu';
 
 class AboutScreen extends React.Component {
@@ -42,6 +44,10 @@ class AboutScreen extends React.Component {
                                 source={require('../../../assets/images/icon.png')} />
                             <Text style={{ ...styles.text, ...styles.logoName }}>React Native</Text>
                         </View>
+                    </View>
+
+                    <View>
+                        <InfoText text="React Native Conference" />
                     </View>
                 </View>
             </ScrollView>
