@@ -5,6 +5,7 @@ import {
     View,
     Text,
     Image,
+    Button,
     TouchableOpacity
 } from 'react-native';
 
@@ -18,12 +19,19 @@ import { styles } from './style';
 
 import InfoText from '../../components/InfoText';
 
+import DateTimePicker from '@react-native-community/datetimepicker';
+
 import Menu, { MenuItem, MenuDivider } from 'react-native-material-menu';
 
 class AboutScreen extends React.Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            date: new Date(1598051730000),
+            mode: 'date',
+            show: false
+        }
     }
 
     componentDidMount() {
@@ -32,6 +40,27 @@ class AboutScreen extends React.Component {
         // });
         // console.log(this.props.navigation);
     }
+
+    showMode = (currentMode) => {
+        this.setState({
+            show: true,
+            mode: currentMode
+        });
+    };
+
+    onChange = (event, selectedDate) => {
+        const currentDate = selectedDate || this.state.date;
+        this.setState({
+            date: currentDate,
+            show: false
+        });
+
+        console.log(this.state.date);
+    };
+
+    showDatepicker = () => {
+        this.showMode('date');
+    };
 
     render() {
         return (
@@ -48,6 +77,19 @@ class AboutScreen extends React.Component {
 
                     <View>
                         <InfoText text="React Native Conference" />
+
+                        <Button onPress={this.showDatepicker} title="Show date picker!" />
+
+                        {this.state.show && (
+                            <DateTimePicker
+                                testID="dateTimePicker"
+                                value={this.state.date}
+                                mode={this.state.mode}
+                                is24Hour={true}
+                                display="default"
+                                onChange={this.onChange}
+                            />
+                        )}
                     </View>
                 </View>
             </ScrollView>
