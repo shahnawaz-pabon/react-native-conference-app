@@ -37,7 +37,7 @@ class AboutScreen extends React.Component {
         super(props);
 
         var today = new Date();
-        today = today.getMonth() + " " + today.getDate() + "," + today.getFullYear();
+        // today = today.getMonth() + " " + today.getDate() + "," + today.getFullYear();
 
         this.state = {
             date: today,
@@ -64,7 +64,7 @@ class AboutScreen extends React.Component {
 
         let currentDate = selectedDate || this.state.date;
 
-        currentDate = currentDate.getMonth() + " " + currentDate.getDate() + "," + currentDate.getFullYear();
+        // currentDate = currentDate.getMonth() + " " + currentDate.getDate() + "," + currentDate.getFullYear();
 
         this.setState({
             date: currentDate,
@@ -107,6 +107,24 @@ class AboutScreen extends React.Component {
                                     icon={{
                                         type: 'ionicon',
                                         name: 'ios-calendar',
+                                    }}
+                                />
+                            }
+                        />
+
+                        <ListItem
+                            title="Location"
+                            titleStyle={styles.listTitleStyle}
+                            rightTitle="Seattle"
+                            rightTitleStyle={{ fontSize: 15, fontFamily: "Ubuntu-Medium" }}
+                            onPress={() => { console.log("pressed")}}
+                            containerStyle={styles.listItemContainer}
+                            leftIcon={
+                                <CustomIcon
+                                    containerStyle={{ backgroundColor: '#2c3e50' }}
+                                    icon={{
+                                        type: 'ionicon',
+                                        name: 'md-pin',
                                     }}
                                 />
                             }
