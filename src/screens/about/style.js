@@ -32,4 +32,14 @@ export const styles = StyleSheet.create({
     logoName: {
         fontSize: 18,
     },
+    listItemContainer: {
+        height: 55,
+        borderWidth: 0.5,
+        borderColor: '#ECECEC',
+    },
+    listTitleStyle: {
+        fontFamily: "Ubuntu-Bold",
+        paddingLeft: 10,
+        fontSize: 15
+    }
 })

@@ -9,11 +9,15 @@ import {
     TouchableOpacity
 } from 'react-native';
 
+import { ListItem } from 'react-native-elements';
+
 import { createStackNavigator } from '@react-navigation/stack';
 
 import StackNavigator from '../../navigators/stack';
 
 import Icon from 'react-native-vector-icons/Ionicons';
+
+import CustomIcon from '../../components/CustomIcon';
 
 import { styles } from './style';
 
@@ -23,12 +27,20 @@ import DateTimePicker from '@react-native-community/datetimepicker';
 
 import Menu, { MenuItem, MenuDivider } from 'react-native-material-menu';
 
+const monthNames = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+];
+
 class AboutScreen extends React.Component {
 
     constructor(props) {
         super(props);
+
+        var today = new Date();
+        today = today.getMonth() + " " + today.getDate() + "," + today.getFullYear();
+
         this.state = {
-            date: new Date(1598051730000),
+            date: today,
             mode: 'date',
             show: false
         }
@@ -49,7 +61,11 @@ class AboutScreen extends React.Component {
     };
 
     onChange = (event, selectedDate) => {
-        const currentDate = selectedDate || this.state.date;
+
+        let currentDate = selectedDate || this.state.date;
+
+        currentDate = currentDate.getMonth() + " " + currentDate.getDate() + "," + currentDate.getFullYear();
+
         this.setState({
             date: currentDate,
             show: false
@@ -78,7 +94,23 @@ class AboutScreen extends React.Component {
                     <View>
                         <InfoText text="React Native Conference" />
 
-                        <Button onPress={this.showDatepicker} title="Show date picker!" />
+                        <ListItem
+                            title="Date"
+                            titleStyle={styles.listTitleStyle}
+                            rightTitle={this.state.date}
+                            rightTitleStyle={{ fontSize: 15, fontFamily: "Ubuntu-Medium" }}
+                            onPress={this.showDatepicker}
+                            containerStyle={styles.listItemContainer}
+                            leftIcon={
+                                <CustomIcon
+                                    containerStyle={{ backgroundColor: '#2c3e50' }}
+                                    icon={{
+                                        type: 'ionicon',
+                                        name: 'ios-calendar',
+                                    }}
+                                />
+                            }
+                        />
 
                         {this.state.show && (
                             <DateTimePicker
