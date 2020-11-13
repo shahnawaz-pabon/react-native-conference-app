@@ -18,6 +18,7 @@ import StackNavigator from '../../navigators/stack';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 import CustomIcon from '../../components/CustomIcon';
+import CustomChevron from '../../components/CustomChevron';
 
 import { styles } from './style';
 
@@ -110,6 +111,7 @@ class AboutScreen extends React.Component {
                                     }}
                                 />
                             }
+                            rightIcon={<CustomChevron />}
                         />
 
                         <ListItem
@@ -117,7 +119,7 @@ class AboutScreen extends React.Component {
                             titleStyle={styles.listTitleStyle}
                             rightTitle="Seattle"
                             rightTitleStyle={{ fontSize: 15, fontFamily: "Ubuntu-Medium" }}
-                            onPress={() => { console.log("pressed")}}
+                            onPress={() => { console.log("pressed") }}
                             containerStyle={styles.listItemContainer}
                             leftIcon={
                                 <CustomIcon
@@ -128,6 +130,7 @@ class AboutScreen extends React.Component {
                                     }}
                                 />
                             }
+                            rightIcon={<CustomChevron />}
                         />
 
                         {this.state.show && (
