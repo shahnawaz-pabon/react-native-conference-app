@@ -80,6 +80,30 @@ class AboutScreen extends React.Component {
     };
 
     render() {
+
+        const locations = [
+            {
+                color: '#1abc9c',
+                label: 'Madison, WI',
+                value: 1
+            },
+            {
+                color: '#2980b9',
+                label: 'Austin, TX',
+                value: 2
+            },
+            {
+                color: '#2980b9',
+                label: 'Chicago, IL',
+                value: 3
+            },
+            {
+                color: '#2980b9',
+                label: 'Seattle, WA',
+                value: 4
+            }
+        ];
+
         return (
 
             <ScrollView style={styles.scroll}>
