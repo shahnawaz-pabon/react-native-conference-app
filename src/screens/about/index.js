@@ -147,6 +147,9 @@ class AboutScreen extends React.Component {
                             onValueChange={value => {
                                 console.log(value);
                             }}
+                            modalAnimationType="fade"
+                            value="Seattle, WA"
+                            defaultValue="Madison, WI"
                         />
 
                         {/* <ListItem
