@@ -11,6 +11,8 @@ import {
 
 import { ListItem } from 'react-native-elements';
 
+import { CustomPicker } from 'react-native-custom-picker';
+
 import { createStackNavigator } from '@react-navigation/stack';
 
 import StackNavigator from '../../navigators/stack';
@@ -138,7 +140,16 @@ class AboutScreen extends React.Component {
                             rightIcon={<CustomChevron />}
                         />
 
-                        <ListItem
+                        <CustomPicker
+                            placeholder={'Select location...'}
+                            options={locations}
+                            getLabel={item => item.label}
+                            onValueChange={value => {
+                                console.log(value);
+                            }}
+                        />
+
+                        {/* <ListItem
                             title="Location"
                             titleStyle={styles.listTitleStyle}
                             rightTitle="Seattle"
@@ -147,7 +158,7 @@ class AboutScreen extends React.Component {
                             containerStyle={styles.listItemContainer}
                             leftIcon={
                                 <CustomIcon
-                                    containerStyle={{ backgroundColor: '#2c3e50' }}
+                                    // containerStyle={{ backgroundColor: '#2c3e50' }}
                                     icon={{
                                         type: 'ionicon',
                                         name: 'md-pin',
@@ -155,7 +166,7 @@ class AboutScreen extends React.Component {
                                 />
                             }
                             rightIcon={<CustomChevron />}
-                        />
+                        /> */}
 
                         {this.state.show && (
                             <DateTimePicker
