@@ -81,6 +81,48 @@ class AboutScreen extends React.Component {
         this.showMode('date');
     };
 
+    renderHeader() {
+        return (
+            <View style={styles.headerFooterContainer}>
+                <Text style={[styles.text, { color: '#2c3e50' }]}>Options</Text>
+            </View>
+        )
+    }
+
+    renderOption(settings) {
+        const { item, getLabel } = settings
+        return (
+            <View style={styles.optionContainer}>
+                <View style={styles.innerContainer}>
+                    <View style={[styles.box, { backgroundColor: item.color }]} />
+                    <Text style={[styles.text, { color: item.color, alignSelf: 'flex-start' }]}>{getLabel(item)}</Text>
+                </View>
+            </View>
+        )
+    }
+
+    renderField(settings) {
+        const { selectedItem, defaultText, getLabel, clear } = settings
+        return (
+            <View style={styles.container}>
+                <View>
+                    {!selectedItem && <Text style={[styles.text, { color: '#ffcb65' }]}>{defaultText}</Text>}
+                    {selectedItem && (
+                        <View style={styles.innerContainer}>
+
+                            <Text style={[styles.text, { color: selectedItem.color }]}>
+                                {getLabel(selectedItem)}
+                            </Text>
+                            <TouchableOpacity style={{ marginLeft: 5 }} onPress={clear}>
+                                <Icon name="times" size={18} color="white" />
+                            </TouchableOpacity>
+                        </View>
+                    )}
+                </View>
+            </View>
+        )
+    }
+
     render() {
 
         const locations = [
