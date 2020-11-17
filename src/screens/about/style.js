@@ -41,5 +41,34 @@ export const styles = StyleSheet.create({
         fontFamily: "Ubuntu-Bold",
         paddingLeft: 10,
         fontSize: 15
+    },
+    headerFooterContainer: {
+        padding: 10,
+        alignItems: 'center'
+    },
+    innerContainer: {
+        flexDirection: 'row',
+        alignItems: 'stretch'
+    },
+    clearButton: {
+        backgroundColor: 'grey',
+        borderRadius: 5,
+        marginRight: 10,
+        padding: 5
+    },
+    optionContainer: {
+        padding: 10,
+        borderBottomColor: 'grey',
+        borderBottomWidth: 1
+    },
+    optionInnerContainer: {
+        flex: 1,
+        flexDirection: 'row'
+    },
+    box: {
+        width: 20,
+        height: 20,
+        backgroundColor: 'grey',
+        marginRight: 10
     }
 })

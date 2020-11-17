@@ -84,7 +84,7 @@ class AboutScreen extends React.Component {
     renderHeader() {
         return (
             <View style={styles.headerFooterContainer}>
-                <Text style={[styles.text, { color: '#2c3e50' }]}>Options</Text>
+                <Text style={[styles.text, { color: '#2c3e50' }]}>Locations</Text>
             </View>
         )
     }
@@ -104,18 +104,26 @@ class AboutScreen extends React.Component {
     renderField(settings) {
         const { selectedItem, defaultText, getLabel, clear } = settings
         return (
-            <View style={styles.container}>
+            <View style={{
+                borderColor: 'grey',
+                // borderWidth: 1,
+                padding: 20
+            }}>
                 <View>
                     {!selectedItem && <Text style={[styles.text, { color: '#ffcb65' }]}>{defaultText}</Text>}
                     {selectedItem && (
                         <View style={styles.innerContainer}>
 
+                            <TouchableOpacity style={styles.clearButton} onPress={clear}>
+                                <Text style={{ color: '#fff' }}>Clear</Text>
+                            </TouchableOpacity>
+
                             <Text style={[styles.text, { color: selectedItem.color }]}>
                                 {getLabel(selectedItem)}
                             </Text>
-                            <TouchableOpacity style={{ marginLeft: 5 }} onPress={clear}>
+                            {/* <TouchableOpacity style={{ marginLeft: 5 }} onPress={clear}>
                                 <Icon name="times" size={18} color="white" />
-                            </TouchableOpacity>
+                            </TouchableOpacity> */}
                         </View>
                     )}
                 </View>
@@ -127,17 +135,17 @@ class AboutScreen extends React.Component {
 
         const locations = [
             {
-                color: '#1abc9c',
+                color: '#2660A4',
                 label: 'Madison, WI',
                 value: 1
             },
             {
-                color: '#2980b9',
+                color: '#1abc9c',
                 label: 'Austin, TX',
                 value: 2
             },
             {
-                color: '#2980b9',
+                color: '#7f8c8d',
                 label: 'Chicago, IL',
                 value: 3
             },
@@ -160,7 +168,7 @@ class AboutScreen extends React.Component {
                         </View>
                     </View>
 
-                    <View>
+                    <View style={{ flex: 1, flexDirection: "column" }}>
                         <InfoText text="React Native Conference" />
 
                         <ListItem
@@ -182,17 +190,23 @@ class AboutScreen extends React.Component {
                             rightIcon={<CustomChevron />}
                         />
 
-                        <CustomPicker
-                            placeholder={'Select location...'}
-                            options={locations}
-                            getLabel={item => item.label}
-                            onValueChange={value => {
-                                console.log(value);
-                            }}
-                            modalAnimationType="fade"
-                            value="Seattle, WA"
-                            defaultValue="Madison, WI"
-                        />
+                        <View style={{ flex: 1, flexDirection: "column", justifyContent: 'center' }}>
+
+                            <CustomPicker
+                                placeholder={'Select location...'}
+                                options={locations}
+                                getLabel={item => item.label}
+                                fieldTemplate={this.renderField}
+                                optionTemplate={this.renderOption}
+                                headerTemplate={this.renderHeader}
+                                onValueChange={value => {
+                                    console.log(value);
+                                }}
+                                modalAnimationType="fade"
+                            // value="Seattle, WA"
+                            // defaultValue="Madison, WI"
+                            />
+                        </View>
 
                         {/* <ListItem
                             title="Location"
