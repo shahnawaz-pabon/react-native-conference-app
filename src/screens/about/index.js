@@ -101,6 +101,19 @@ class AboutScreen extends React.Component {
         )
     }
 
+    renderFooter(action) {
+        return (
+            <TouchableOpacity
+                style={styles.headerFooterContainer}
+                onPress={() => {
+                    console.log("Footer pressed");
+                }}
+            >
+                <Text>This is footer, click me!</Text>
+            </TouchableOpacity>
+        )
+    }
+
     renderField(settings) {
         const { selectedItem, defaultText, getLabel, clear } = settings
         return (
