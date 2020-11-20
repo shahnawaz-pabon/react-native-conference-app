@@ -212,6 +212,7 @@ class AboutScreen extends React.Component {
                                 fieldTemplate={this.renderField}
                                 optionTemplate={this.renderOption}
                                 headerTemplate={this.renderHeader}
+                                footerTemplate={this.renderFooter}
                                 onValueChange={value => {
                                     console.log(value);
                                 }}
