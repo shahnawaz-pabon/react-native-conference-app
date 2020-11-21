@@ -10,4 +10,4 @@ const CustomChevron = () => (
     />
 )
 
-export default CustomChevron
+export default CustomChevron;
