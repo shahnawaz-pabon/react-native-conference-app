@@ -25,7 +25,14 @@ export const styles = StyleSheet.create({
     buttons: {
         position: "absolute",
         width: 60,
-        height: 60
+        height: 60,
+        borderRadius: 60 / 2,
+        alignItems: "center",
+        justifyContent: "center",
+        shadowRadius: 10,
+        shadowColor: "#2c3e50",
+        shadowOpacity: 0.3,
+        shadowOffset: { height: 10 }
     },
     menu: {
         backgroundColor: "#2c3e50"
