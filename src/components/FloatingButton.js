@@ -6,9 +6,31 @@ const FloatingButton = ({ props }) => (
     <View style={[styles.container, props.style]}>
 
         <TouchableWithoutFeedback>
-            <Animated.View style={[styles.button, styles.secondary, styles.menu]}>
+            <Animated.View style={[styles.button, styles.secondary]}>
                 <Icon
-                    size={24}
+                    size={20}
+                    color="white"
+                    type="material"
+                    name="notifications"
+                />
+            </Animated.View>
+        </TouchableWithoutFeedback>
+
+        <TouchableWithoutFeedback>
+            <Animated.View style={[styles.button, styles.secondary]}>
+                <Icon
+                    size={20}
+                    color="white"
+                    type="material"
+                    name="notifications"
+                />
+            </Animated.View>
+        </TouchableWithoutFeedback>
+
+        <TouchableWithoutFeedback>
+            <Animated.View style={[styles.button, styles.secondary]}>
+                <Icon
+                    size={20}
                     color="white"
                     type="material"
                     name="notifications"
