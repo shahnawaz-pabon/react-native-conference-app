@@ -2,7 +2,7 @@ import React from 'react';
 import { TouchableWithoutFeedback, Animated, StyleSheet, View, Text } from 'react-native';
 import { Icon } from 'react-native-elements';
 
-export function FloatingButton(props) {
+export default function FloatingButton(props) {
 
     const animation = new Animated.Value(0);
 
@@ -14,7 +14,18 @@ export function FloatingButton(props) {
             friction: 5
         }).start();
 
-        this.open = !this.open;
+        // this.open = !this.open;
+    }
+
+    const rotation = {
+        transform: [
+            {
+                rotate: animation.interpolate({
+                    inputRange: [0, 1],
+                    outputRange: ["0deg", "45deg"]
+                })
+            }
+        ]
     }
 
     return (
@@ -54,12 +65,12 @@ export function FloatingButton(props) {
             </TouchableWithoutFeedback>
 
             <TouchableWithoutFeedback onPress={toggleMenu}>
-                <Animated.View style={[styles.button, styles.menu]}>
+                <Animated.View style={[styles.button, styles.menu, rotation]}>
                     <Icon
                         size={24}
-                        color="white"
-                        type="material"
-                        name="notifications"
+                        color="black"
+                        type="font-awesome-5"
+                        name="plus"
                     />
                 </Animated.View>
             </TouchableWithoutFeedback>
@@ -70,7 +81,9 @@ export function FloatingButton(props) {
 export const styles = StyleSheet.create({
     container: {
         alignItems: "center",
-        position: "absolute"
+        justifyContent: "center",
+        position: "absolute",
+        backgroundColor: "#2c3e50"
     },
     buttons: {
         position: "absolute",
@@ -86,6 +99,7 @@ export const styles = StyleSheet.create({
     },
     menu: {
         backgroundColor: "#2c3e50"
+        // backgroundColor: "#F02A4B"
     },
     secondary: {
         position: "absolute",
@@ -95,5 +109,3 @@ export const styles = StyleSheet.create({
         backgroundColor: "#fff"
     }
 });
-
-export default FloatingButton;

@@ -13,6 +13,8 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 import { styles } from './style';
 
+import FloatingButton from '../../components/FloatingButton';
+
 class ScheduleScreen extends React.Component {
 
     constructor(props) {
@@ -33,7 +35,9 @@ class ScheduleScreen extends React.Component {
                     }}>
                     <Text style={{ fontFamily: 'Ubuntu-Bold', fontSize: 18 }}>
                         This is ScheduleScreen
-              </Text>
+                    </Text>
+
+                    <FloatingButton style={{ bottom: 40, right: 30 }} />
                 </View>
             </>
         );
