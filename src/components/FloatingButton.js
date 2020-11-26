@@ -2,54 +2,70 @@ import React from 'react';
 import { TouchableWithoutFeedback, Animated, StyleSheet, View, Text } from 'react-native';
 import { Icon } from 'react-native-elements';
 
-const FloatingButton = ({ props }) => (
-    <View style={[styles.container, props.style]}>
+export function FloatingButton(props) {
 
-        <TouchableWithoutFeedback>
-            <Animated.View style={[styles.button, styles.secondary]}>
-                <Icon
-                    size={20}
-                    color="white"
-                    type="material"
-                    name="notifications"
-                />
-            </Animated.View>
-        </TouchableWithoutFeedback>
+    const animation = new Animated.Value(0);
 
-        <TouchableWithoutFeedback>
-            <Animated.View style={[styles.button, styles.secondary]}>
-                <Icon
-                    size={20}
-                    color="white"
-                    type="material"
-                    name="notifications"
-                />
-            </Animated.View>
-        </TouchableWithoutFeedback>
+    const toggleMenu = () => {
+        const toValue = this.open ? 0 : 1;
 
-        <TouchableWithoutFeedback>
-            <Animated.View style={[styles.button, styles.secondary]}>
-                <Icon
-                    size={20}
-                    color="white"
-                    type="material"
-                    name="notifications"
-                />
-            </Animated.View>
-        </TouchableWithoutFeedback>
+        Animated.spring(animation, {
+            toValue,
+            friction: 5
+        }).start();
 
-        <TouchableWithoutFeedback>
-            <Animated.View style={[styles.button, styles.menu]}>
-                <Icon
-                    size={24}
-                    color="white"
-                    type="material"
-                    name="notifications"
-                />
-            </Animated.View>
-        </TouchableWithoutFeedback>
-    </View>
-)
+        this.open = !this.open;
+    }
+
+    return (
+        <View style={[styles.container, props.style]}>
+
+            <TouchableWithoutFeedback>
+                <Animated.View style={[styles.button, styles.secondary]}>
+                    <Icon
+                        size={20}
+                        color="white"
+                        type="material"
+                        name="notifications"
+                    />
+                </Animated.View>
+            </TouchableWithoutFeedback>
+
+            <TouchableWithoutFeedback>
+                <Animated.View style={[styles.button, styles.secondary]}>
+                    <Icon
+                        size={20}
+                        color="white"
+                        type="material"
+                        name="notifications"
+                    />
+                </Animated.View>
+            </TouchableWithoutFeedback>
+
+            <TouchableWithoutFeedback>
+                <Animated.View style={[styles.button, styles.secondary]}>
+                    <Icon
+                        size={20}
+                        color="white"
+                        type="material"
+                        name="notifications"
+                    />
+                </Animated.View>
+            </TouchableWithoutFeedback>
+
+            <TouchableWithoutFeedback onPress={toggleMenu}>
+                <Animated.View style={[styles.button, styles.menu]}>
+                    <Icon
+                        size={24}
+                        color="white"
+                        type="material"
+                        name="notifications"
+                    />
+                </Animated.View>
+            </TouchableWithoutFeedback>
+        </View>
+    )
+}
 
 export const styles = StyleSheet.create({
     container: {
